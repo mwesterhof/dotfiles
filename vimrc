@@ -21,6 +21,10 @@ filetype plugin indent on    " required
 " Non-vundle realms start here
 
 " stuff to check out
+set completeopt=longest,menuone
+set wildmode=list:longest
+set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
+" https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
 
 " basic usability stuff
 
@@ -33,6 +37,12 @@ set noswapfile
 set clipboard=unnamed
 
 syntax on
+
+set encoding=utf-8
+set ttyfast
+set ruler
+set wildmenu
+
 highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
 
 "disable all gui options but scroll bars
@@ -44,6 +54,14 @@ set linebreak
 set expandtab
 set ts=4
 set sw=4
+set softtabstop=4
+
+set autoindent
+set nocindent
+set smartindent
+set showmode
+
+
 
 " leader hotkeys
 let mapleader=","
