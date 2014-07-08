@@ -11,6 +11,8 @@ Plugin 'gmarik/Vundle.vim'
 " my plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
+Plugin 'mattsacks/vim-eddie'
+
 Plugin 'gundo'
 
 
@@ -28,6 +30,8 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 " https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
 
 " basic usability stuff
+
+colorscheme eddie
 
 set number
 set go-=T 
@@ -121,8 +125,13 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " GUI stuff
 
-
 " MAC only
-map <D-j> ddp
-map <D-k> ddkP
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    set gfn=Monaco:h12
+    map <D-j> ddp
+    map <D-k> ddkP
+  endif
+endif
 
