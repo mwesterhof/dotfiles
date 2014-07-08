@@ -10,6 +10,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " my plugins
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'gundo'
 
 
