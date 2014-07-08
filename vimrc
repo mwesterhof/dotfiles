@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattsacks/vim-eddie'
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'gundo'
 
