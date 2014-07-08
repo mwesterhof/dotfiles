@@ -114,7 +114,7 @@ map <F2> :cn<CR>
 map <leader>g :!git 
 
 noremap ; :
-nnoremap <BS> :nohlsearch<CR>
+nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
 
 map <Tab> <C-w><C-w>
 
