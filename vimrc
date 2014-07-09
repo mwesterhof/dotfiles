@@ -112,8 +112,9 @@ map <ESC><ESC> :ccl<cr>
 map <F1> :cN<CR>
 map <F2> :cn<CR>
 
-" git!
-map <leader>g :!git 
+" git fugitive tweaks!
+map <leader>g :Git 
+map <leader>gs :Gstatus<cr>
 
 " vim-airline fu
 set laststatus=2
