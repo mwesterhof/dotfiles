@@ -113,8 +113,10 @@ map <F1> :cN<CR>
 map <F2> :cn<CR>
 
 " git fugitive tweaks!
-map <leader>g :Git 
+map <leader>g<space> :Git 
 map <leader>gs :Gstatus<cr>
+autocmd BufReadPost fugitive://* set bufhidden=delete
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " vim-airline fu
 set laststatus=2
