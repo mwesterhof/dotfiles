@@ -68,7 +68,7 @@ set nocindent
 set smartindent
 set showmode
 
-
+set diffopt=filler,vertical
 
 " leader hotkeys
 let mapleader=","
