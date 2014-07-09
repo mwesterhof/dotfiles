@@ -13,6 +13,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattsacks/vim-eddie'
 Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
 
 Plugin 'gundo'
 
@@ -93,6 +94,7 @@ set scrolloff=3
 
 vmap <leader>f :fold<CR>
 map Q :NERDTreeToggle<CR>
+map <F6> :set lines=999<CR>:set columns=999<CR>
 
 " search
 set incsearch
@@ -113,6 +115,12 @@ map <F2> :cn<CR>
 " git!
 map <leader>g :!git 
 
+" vim-airline fu
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 noremap ; :
 nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
 
@@ -123,16 +131,20 @@ let g:gundo_preview_bottom = 1
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
-
 " GUI stuff
 
 " MAC only
-if has("unix")
-  let s:uname = system("uname -s")
-  if s:uname == "Darwin"
-    set gfn=Monaco:h12
-    map <D-j> ddp
-    map <D-k> ddkP
-  endif
-endif
 
+if has("unix")
+    let s:uname = substitute(system("uname"), '\n', '', '')
+    if s:uname == "Darwin"
+        let OS="osx"
+        set gfn=Monaco:h12
+        map <D-j> ddp
+        map <D-k> ddkP
+    else
+        let OS="linux"
+    endif
+else
+    let OS="windows"
+endif
