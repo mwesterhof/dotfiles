@@ -14,6 +14,7 @@ Plugin 'scrooloose/syntastic'
 Plugin 'mattsacks/vim-eddie'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
+Plugin 'kien/rainbow_parentheses.vim'
 
 Plugin 'gundo'
 
@@ -117,6 +118,12 @@ map <leader>g<space> :Git
 map <leader>gs :Gstatus<cr>
 autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" rainbow parens tweaks
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " vim-airline fu
 set laststatus=2
