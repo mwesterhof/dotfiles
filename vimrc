@@ -132,6 +132,9 @@ let g:gundo_preview_bottom = 1
 
 let NERDTreeIgnore=['\.pyc$', '\~$']
 
+" filetypes
+autocmd BufRead,BufNew *.md set filetype=markdown
+
 " GUI stuff
 
 " MAC only
