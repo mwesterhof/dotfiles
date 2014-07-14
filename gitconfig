@@ -1,0 +1,12 @@
+[user]
+    name = "mephizzle"
+    email = "mephistolomaniac@gmail.com"
+
+[color]
+	ui = true
+
+[alias]
+    st = status
+    ci = commit
+    co = checkout
+    tree = "log --graph --all --oneline --decorate"
