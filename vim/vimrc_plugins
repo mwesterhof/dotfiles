@@ -1,0 +1,20 @@
+" required for vundle:
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" my plugins
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'mattsacks/vim-eddie'
+Plugin 'tpope/vim-fugitive'
+Plugin 'bling/vim-airline'
+Plugin 'kien/rainbow_parentheses.vim'
+
+Plugin 'gundo'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
