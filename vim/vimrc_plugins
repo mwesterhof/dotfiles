@@ -12,6 +12,7 @@ Plugin 'mattsacks/vim-eddie'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'mikewest/vimroom'
 
 Plugin 'gundo'
 

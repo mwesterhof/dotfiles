@@ -107,6 +107,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
+" vimroom tweaks
+let g:vimroom_width=120
+let g:vimroom_sidebar_height=1
+
 noremap ; :
 nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
 
@@ -120,15 +124,20 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " filetypes
 autocmd BufRead,BufNew *.md set filetype=markdown
 
-" GUI stuff
-
-" MAC only
 
 if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
     if s:uname == "Darwin"
+        " MAC only
         let OS="osx"
-        set gfn=Monaco:h12
+
+        " Technically, we should put this stuff in gvimrc, but this allows us
+        " to keep it all in the same file.
+        if has('gui_running')
+            " GUI stuff
+            set gfn=Monaco:h12
+        endif
+
         map <D-j> ddp
         map <D-k> ddkP
     else
@@ -137,3 +146,11 @@ if has("unix")
 else
     let OS="windows"
 endif
+
+
+" cool trick, but let's test it on other OSes, and find a nice toggle fix for
+" it
+" if has("gui_running")
+"   set fuoptions=maxvert,maxhorz
+"   au GUIEnter * set fullscreen
+" endif
