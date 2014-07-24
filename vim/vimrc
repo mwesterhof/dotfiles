@@ -71,6 +71,7 @@ set scrolloff=3
 
 vmap <leader>f :fold<CR>
 map Q :NERDTreeToggle<CR>
+map T :TlistToggle<CR>
 map <F6> :set lines=999<CR>:set columns=999<CR>
 
 " search
