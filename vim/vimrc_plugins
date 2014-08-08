@@ -13,8 +13,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mikewest/vimroom'
-
 Plugin 'taglist.vim'
+Plugin 'vimwiki/vimwiki'
+
 Plugin 'gundo'
 
 " All of your Plugins must be added before the following line

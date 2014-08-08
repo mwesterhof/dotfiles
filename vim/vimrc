@@ -13,7 +13,6 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 colorscheme eddie
 
 set number
-set go-=T 
 
 set nobackup
 set noswapfile
@@ -30,8 +29,9 @@ set wildmenu
 highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
 
 "disable all gui options but scroll bars
+set go-=T 
 set go+=lLrRbB
-set go-=lLbB
+set go-=lLrRbB
 set linebreak
 
 " tab/indent
@@ -55,6 +55,7 @@ map <leader>w :w<CR>
 map <leader>e :tabf $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
+map <leader>O :1,1000bd
 
 map <leader><leader> @q
 
@@ -127,6 +128,7 @@ autocmd BufRead,BufNew *.md set filetype=markdown
 
 
 if has("unix")
+    map <leader>t :r!date "+\%T"
     let s:uname = substitute(system("uname"), '\n', '', '')
     if s:uname == "Darwin"
         " MAC only
@@ -155,3 +157,12 @@ endif
 "   set fuoptions=maxvert,maxhorz
 "   au GUIEnter * set fullscreen
 " endif
+
+
+imap <leader><leader> <esc>
+
+function VWU()
+    VimwikiDiaryIndex
+    VimwikiDiaryGenerateLinks
+    VimwikiAll2HTML
+endfunction
