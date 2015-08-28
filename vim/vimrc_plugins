@@ -6,15 +6,23 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " my plugins
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-vinegar'
+Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattsacks/vim-eddie'
 Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'mikewest/vimroom'
 Plugin 'taglist.vim'
 Plugin 'vimwiki/vimwiki'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'rstacruz/vim-sparkup'
+Plugin 'vim-scripts/TeTrIs.vim'
+Plugin 'uguu-org/vim-matrix-screensaver'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'msanders/snipmate.vim'
 
 Plugin 'gundo'
 
