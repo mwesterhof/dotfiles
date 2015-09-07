@@ -1,0 +1,11 @@
+set nocompatible
+
+set hlsearch
+set incsearch
+set nobackup
+set noswapfile
+
+set ts=4
+set sw=4
+
+set nu
