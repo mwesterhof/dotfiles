@@ -9,4 +9,4 @@
     st = status
     ci = commit
     co = checkout
-    tree = "log --graph --all --oneline --decorate"
+    rekt = "log --graph --all --oneline --decorate"
