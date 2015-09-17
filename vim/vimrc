@@ -17,6 +17,8 @@ set number
 set nobackup
 set noswapfile
 
+set backspace=indent,eol,start
+
 set clipboard=unnamed
 
 syntax on
@@ -82,8 +84,7 @@ set smartcase
 set nowrapscan
 
 
-" global search hackery (// for search, <esc><esc> to close results
-" map // :cope<CR>:vimgrep //gj **/*<left><left><left><left><left><left><left><left>
+" global search
 map // :Ack<space>
 map <ESC><ESC> :ccl<cr>
 
@@ -98,10 +99,10 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " rainbow parens tweaks
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au VimEnter *.py RainbowParenthesesToggle
+au Syntax *.py RainbowParenthesesLoadRound
+au Syntax *.py RainbowParenthesesLoadSquare
+au Syntax *.py RainbowParenthesesLoadBraces
 
 " vim-airline fu
 set laststatus=2
@@ -113,19 +114,15 @@ noremap ; :
 nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
 
 map <Tab> <C-w><C-w>
+let g:netrw_winsize = ""
 
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
 map <leader>O :1,1000bd<CR>
 let g:ctrlp_map = '<leader>t'
 
-" let NERDTreeIgnore=['\.pyc$', '\~$']
-" map Q :NERDTreeToggle<CR>
-" map <leader>O :1,1000bd<CR>:NERDTree<CR>
-
 " filetypes
 autocmd BufRead,BufNew *.md set filetype=markdown
-
 
 if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
@@ -167,10 +164,8 @@ function VWU()
     VimwikiAll2HTML
 endfunction
 
-
-
-
-
+" custom commands
+command Sblame :%!svn blame %
 
 
 " Jump to the next or previous line that has the same level or a lower
