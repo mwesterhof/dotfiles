@@ -10,3 +10,5 @@
     ci = commit
     co = checkout
     rekt = "log --graph --all --oneline --decorate"
+[core]
+	editor = vim
