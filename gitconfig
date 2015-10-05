@@ -12,3 +12,5 @@
     rekt = "log --graph --all --oneline --decorate"
 [core]
 	editor = vim
+[push]
+	default = simple

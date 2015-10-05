@@ -30,6 +30,10 @@ set wildmenu
 
 highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
 
+" use a different shell from vim, so we can see if we're shelling out
+set shell=/bin/bash
+nnoremap <c-d> :sh<cr>
+
 "disable all gui options but scroll bars
 set go-=T 
 set go+=lLrRbB

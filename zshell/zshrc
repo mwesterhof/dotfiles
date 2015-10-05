@@ -84,6 +84,7 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+PATH=~/bin:$PATH
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -91,3 +92,6 @@ alias eu="ls"
 alias mrs="./manage.py runserver"
 
 AUTO_CD="true"
+
+export NVM_DIR="/home/mephisto/dev/asics-gtm/asics/static/frontend/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
