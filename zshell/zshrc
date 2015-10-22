@@ -90,6 +90,7 @@ bindkey -v
 export KEYTIMEOUT=1
 alias eu="ls"
 alias mrs="./manage.py runserver"
+alias doco="docker-compose"
 
 AUTO_CD="true"
 

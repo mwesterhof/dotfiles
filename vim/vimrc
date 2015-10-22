@@ -12,6 +12,9 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 
 colorscheme default
 
+" hide buffers with unsaved changes in them
+set hidden
+
 set number
 
 set nobackup
