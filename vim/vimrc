@@ -12,9 +12,6 @@ set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 
 colorscheme default
 
-" hide buffers with unsaved changes in them
-set hidden
-
 set number
 
 set nobackup
@@ -23,6 +20,7 @@ set noswapfile
 set backspace=indent,eol,start
 set clipboard=unnamed
 set mouse=a
+set cursorline
 
 syntax on
 
@@ -42,6 +40,10 @@ set go-=T
 set go+=lLrRbB
 set go-=lLrRbB
 set linebreak
+
+" i prefer new splits to be below or right instead of top or left
+set splitbelow
+set splitright
 
 " tab/indent
 set expandtab
@@ -65,6 +67,7 @@ map <leader>s :w<CR>
 map <leader>e :tabf $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
+map <leader>n :sp ~/notes.md<cr>
 
 map <leader><leader> @q
 
