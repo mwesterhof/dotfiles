@@ -55,6 +55,7 @@ set autoindent
 set nocindent
 set smartindent
 set showmode
+set nowrap
 
 set diffopt=filler,vertical
 let g:sparkupExecuteMapping = '<c-s>'
@@ -93,7 +94,6 @@ set ignorecase
 set smartcase
 set nowrapscan
 
-
 " global search
 map // :Ack<space>
 map <ESC><ESC> :ccl<cr>
@@ -101,6 +101,9 @@ map <ESC><ESC> :ccl<cr>
 " quickfix window (and search results) quick navigation
 map <F1> :cN<CR>
 map <F2> :cn<CR>
+
+" tags
+set tags=./tags;$HOME
 
 " git fugitive tweaks!
 map <leader>g<space> :Git 
@@ -226,3 +229,8 @@ onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+" project specific rc files sound pretty bloody awesome
+set exrc
+" but let's not accept unsafe commands from them
+set secure
