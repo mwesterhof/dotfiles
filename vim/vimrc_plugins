@@ -23,8 +23,11 @@ Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'msanders/snipmate.vim'
-
 Plugin 'gundo'
+
+" testing
+Plugin 'davidhalter/jedi-vim' " needs jedi installed (global pip install)
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -18,7 +18,7 @@ set nobackup
 set noswapfile
 
 set backspace=indent,eol,start
-set clipboard=unnamed
+set clipboard=unnamedplus
 set mouse=a
 set cursorline
 
@@ -116,6 +116,9 @@ au VimEnter *.py RainbowParenthesesToggle
 au Syntax *.py RainbowParenthesesLoadRound
 au Syntax *.py RainbowParenthesesLoadSquare
 au Syntax *.py RainbowParenthesesLoadBraces
+
+" jedi-vim tweaks
+let g:jedi#popup_on_dot = 0
 
 " vim-airline fu
 set laststatus=2
