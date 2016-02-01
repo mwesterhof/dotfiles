@@ -69,6 +69,7 @@ map <leader>e :tabf $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
 map <leader>n :sp ~/notes.md<cr>
+map <leader>m :make<cr>
 
 map <leader><leader> @q
 
