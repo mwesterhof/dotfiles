@@ -91,6 +91,7 @@ export KEYTIMEOUT=1
 alias eu="ls"
 alias mrs="./manage.py runserver"
 alias doco="docker-compose"
+alias yolo="git pull --rebase && git push"
 
 AUTO_CD="true"
 
