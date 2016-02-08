@@ -27,6 +27,8 @@ Plugin 'gundo'
 
 " testing
 Plugin 'davidhalter/jedi-vim' " needs jedi installed (global pip install)
+Plugin 'airblade/vim-gitgutter'
+Plugin 'gregsexton/gitv'
 
 
 " All of your Plugins must be added before the following line
