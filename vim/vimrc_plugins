@@ -29,6 +29,7 @@ Plugin 'gundo'
 Plugin 'davidhalter/jedi-vim' " needs jedi installed (global pip install)
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
+Plugin 'croaker/mustang-vim'
 
 
 " All of your Plugins must be added before the following line

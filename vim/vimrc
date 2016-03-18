@@ -68,7 +68,8 @@ map <leader>s :w<CR>
 map <leader>e :tabf $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
-map <leader>n :sp ~/notes.md<cr>
+
+map <leader>N :vs ~/notes<cr>
 map <leader>m :make<cr>
 
 map <leader><leader> @q
@@ -113,7 +114,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " gitgutter (related) tweaks
-set updatetime=250
+set updatetime=1000
 
 " gitk tweaks
 let g:Gitv_OpenHorizontal = 1
@@ -246,6 +247,22 @@ onoremap <silent> [L :call NextIndent(1, 0, 1, 1)<CR>
 onoremap <silent> ]L :call NextIndent(1, 1, 1, 1)<CR>
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+
+" hackery
+function! VisitUrl()
+python << EOF
+import vim
+import webbrowser
+import sys
+stderr = sys.stderr
+sys.stderr = None
+webbrowser.open_new_tab(vim.current.line.strip())
+sys.stderr = stderr
+EOF
+endfunction
+nnoremap <silent> <leader><return> :call VisitUrl()<cr><C-l>
+" end hackery
 
 " project specific rc files sound pretty bloody awesome
 set exrc
