@@ -65,6 +65,7 @@ let mapleader=","
 
 map <leader>c :bd<cr>
 map <leader>s :w<CR>
+map <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
 map <leader>e :tabf $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
