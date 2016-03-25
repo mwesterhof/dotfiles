@@ -29,7 +29,7 @@ set ttyfast
 set ruler
 set wildmenu
 
-highlight Pmenu ctermfg=1 ctermbg=4 guibg=grey30
+highlight Pmenu ctermbg=238 gui=bold
 
 " use a different shell from vim, so we can see if we're shelling out
 set shell=/bin/bash
@@ -151,7 +151,6 @@ let g:netrw_winsize = ""
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_preview_bottom = 1
 map <leader>O :1,1000bd<CR>
-let g:ctrlp_map = '<leader>t'
 
 " filetypes
 autocmd BufRead,BufNew *.md set filetype=markdown

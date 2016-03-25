@@ -6,9 +6,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " my plugins
-" Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-vinegar'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'mattsacks/vim-eddie'
 Plugin 'tpope/vim-fugitive'
@@ -24,12 +22,15 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'msanders/snipmate.vim'
 Plugin 'gundo'
+Plugin 'L9'  " dependancy of fuf
+Plugin 'vim-scripts/fuzzyfinder'
 
 " testing
-Plugin 'davidhalter/jedi-vim' " needs jedi installed (global pip install)
+Plugin 'davidhalter/jedi-vim'  " needs jedi installed (global pip install)
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 Plugin 'croaker/mustang-vim'
+
 
 
 " All of your Plugins must be added before the following line
