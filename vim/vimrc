@@ -29,7 +29,7 @@ set ttyfast
 set ruler
 set wildmenu
 
-highlight Pmenu ctermbg=238 gui=bold
+highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
 
 " use a different shell from vim, so we can see if we're shelling out
 set shell=/bin/bash
@@ -100,6 +100,10 @@ set nowrapscan
 " global search
 map // :Ack<space>
 map <ESC><ESC> :ccl<cr>
+
+" fuzzyfinder
+map <leader>t :FufTaggedFile<cr>
+map <leader>T :FufTag<cr>
 
 " quickfix window (and search results) quick navigation
 map <F1> :cN<CR>
