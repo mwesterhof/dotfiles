@@ -16,6 +16,7 @@ set number
 
 set nobackup
 set noswapfile
+set confirm
 
 set backspace=indent,eol,start
 set clipboard=unnamedplus
