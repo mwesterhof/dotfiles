@@ -4,7 +4,7 @@ source ~/.vimrc_plugins
 
 " stuff to check out
 set completeopt=longest,menuone
-set wildmode=list:longest
+set wildmode=full wildmenu
 set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 " https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
 
@@ -100,6 +100,10 @@ set nowrapscan
 " global search
 map // :Ack<space>
 map <ESC><ESC> :ccl<cr>
+
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 " fuzzyfinder
 map <leader>t :FufTaggedFile<cr>
