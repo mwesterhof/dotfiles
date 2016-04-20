@@ -64,7 +64,7 @@ let g:sparkupExecuteMapping = '<c-s>'
 " leader hotkeys
 let mapleader=","
 
-map <leader>c :bd<cr>
+map <leader>c :q<cr>
 map <leader>s :w<CR>
 map <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
 map <leader>e :tabf $MYVIMRC<CR>
@@ -146,10 +146,10 @@ let g:jedi#completions_command = "<C-Space>"
 let g:jedi#rename_command = ""
 
 " vim-airline fu
-set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
+" set laststatus=2
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#left_sep = ' '
+" let g:airline#extensions#tabline#left_alt_sep = '|'
 
 noremap ; :
 nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
