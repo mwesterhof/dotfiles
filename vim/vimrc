@@ -16,7 +16,6 @@ set number
 
 set nobackup
 set noswapfile
-set confirm
 
 set backspace=indent,eol,start
 set clipboard=unnamedplus
@@ -80,7 +79,7 @@ map <leader><leader> @q
 iab ptp import ipdb; ipdb.set_trace()
 map <leader>r :!python %<CR>
 map <leader>{ :set filetype=htmldjango<CR>
-map <leader>C mo/^\(\(class\)\\|\(def\)\) [^_].\+<CR>`o
+map <leader>C mo/\v^((class)\|(def)) [^_].+<CR>`o
 
 " scrolling
 map <Up> <C-y><C-y>
