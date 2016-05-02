@@ -195,8 +195,6 @@ endif
 " endif
 
 
-imap <leader><leader> <esc>
-
 function VWU()
     VimwikiDiaryIndex
     VimwikiDiaryGenerateLinks
