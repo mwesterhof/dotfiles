@@ -31,6 +31,9 @@ set wildmenu
 
 highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
 
+" cool cryptography trick
+setlocal cryptmethod=blowfish2
+
 " use a different shell from vim, so we can see if we're shelling out
 set shell=/bin/bash
 nnoremap <c-d> :sh<cr>
