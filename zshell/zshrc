@@ -99,3 +99,5 @@ export NVM_DIR="/home/mephisto/dev/asics-gtm/asics/static/frontend/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 cowsay -e "^^" `fortune`
+
+export PYTHONDONTWRITEBYTECODE=1
