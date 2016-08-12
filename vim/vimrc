@@ -78,6 +78,10 @@ map <leader>m :make<cr>
 
 map <leader><leader> @q
 
+" quick markdown headers
+map <leader>1 yypv$r=
+map <leader>2 yypv$r-
+
 " python coding shortcuts
 iab ptp import ipdb; ipdb.set_trace()
 map <leader>r :!python %<CR>
