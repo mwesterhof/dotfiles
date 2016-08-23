@@ -92,6 +92,13 @@ alias eu="ls"
 alias mrs="./manage.py runserver"
 alias doco="docker-compose"
 alias yolo="git pull --rebase && git push"
+alias killem="ps aux |grep runserver |grep -v grep |awk '{print \$2}' |xargs kill"
+
+# for now, let's trying going all neovim
+alias vi="nvim"
+
+# just a temporary hack because i can't be arsed to set up ES properly :)
+alias esrun='/usr/share/elasticsearch/bin/elasticsearch &'
 
 AUTO_CD="true"
 
@@ -101,3 +108,8 @@ export NVM_DIR="/home/mephisto/dev/asics-gtm/asics/static/frontend/.nvm"
 cowsay -e "^^" `fortune`
 
 export PYTHONDONTWRITEBYTECODE=1
+
+# pyenv stuff
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

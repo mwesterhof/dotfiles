@@ -15,7 +15,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'taglist.vim'
 Plugin 'vimwiki/vimwiki'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'rstacruz/vim-sparkup'
+" Plugin 'rstacruz/vim-sparkup'
 Plugin 'vim-scripts/TeTrIs.vim'
 Plugin 'uguu-org/vim-matrix-screensaver'
 Plugin 'editorconfig/editorconfig-vim'
@@ -26,7 +26,7 @@ Plugin 'L9'  " dependancy of fuf
 Plugin 'vim-scripts/fuzzyfinder'
 
 " testing
-Plugin 'davidhalter/jedi-vim'  " needs jedi installed (global pip install)
+" Plugin 'davidhalter/jedi-vim'  " needs jedi installed (global pip install)
 Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 Plugin 'croaker/mustang-vim'
