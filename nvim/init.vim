@@ -31,12 +31,14 @@ set wildmenu
 
 " neovim specific stuff
 if has('nvim')
+    map <c-t> :b term<cr>i
     tnoremap <c-h> <C-\><C-n>
     imap <c-h> <esc>
     set hidden
 endif
 
 highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
+highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
 
 " cool cryptography trick
 " setlocal cryptmethod=blowfish2
