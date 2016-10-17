@@ -75,10 +75,13 @@ let g:sparkupExecuteMapping = '<c-s>'
 " leader hotkeys
 let mapleader=","
 
+" browsers are boring
+map <leader>o :e http://localhost:8000/
+
 map <leader>c :q<cr>
 map <leader>s :w<CR>
 map <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
-map <leader>e :tabf $MYVIMRC<CR>
+map <leader>e :e $MYVIMRC<CR>
 map <leader>\| :set cursorcolumn!<CR>
 map <leader><space> :bn<cr>
 

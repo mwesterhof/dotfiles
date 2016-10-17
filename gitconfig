@@ -3,7 +3,10 @@
     email = "m.westerhof@lukkien.com"
 
 [color]
-	ui = true
+    ui = true
+    status = always
+    log = always
+    diff = always
 
 [alias]
     st = status
