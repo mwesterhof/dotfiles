@@ -1,0 +1,27 @@
+; install evil mode & magit & iedit & helm stuff
+; and nyan-mode, obviously!
+
+(require 'package)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+; lol melpa, did you just break my emacs?
+; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+(setq package-enable-at-startup nil)
+(package-initialize)
+(require 'nyan-mode)
+  (nyan-mode 1)
+(require 'evil)
+  (evil-mode 1)
+(load-theme 'grandshell t)
+(global-evil-tabs-mode t)
+(require 'dired-x)
+
+(define-key evil-normal-state-map "-" 'dired-jump)
+(define-key dired-mode-map (kbd "-") 'dired-up-directory)
+
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+'(make-backup-files nil)
