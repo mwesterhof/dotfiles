@@ -24,6 +24,7 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'gundo'
 Plugin 'L9'  " dependancy of fuf
 Plugin 'vim-scripts/fuzzyfinder'
+Plugin 'mwesterhof/plantuml-syntax'
 
 " testing
 " Plugin 'davidhalter/jedi-vim'  " needs jedi installed (global pip install)
