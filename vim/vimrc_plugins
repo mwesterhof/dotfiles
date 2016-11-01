@@ -1,39 +1,22 @@
-" required for vundle:
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
-
-" my plugins
-Plugin 'tpope/vim-vinegar'
-Plugin 'scrooloose/syntastic'
-Plugin 'mattsacks/vim-eddie'
-Plugin 'tpope/vim-fugitive'
-Plugin 'bling/vim-airline'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'taglist.vim'
-Plugin 'vimwiki/vimwiki'
-Plugin 'altercation/vim-colors-solarized'
-" Plugin 'rstacruz/vim-sparkup'
-Plugin 'vim-scripts/TeTrIs.vim'
-Plugin 'uguu-org/vim-matrix-screensaver'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'msanders/snipmate.vim'
-Plugin 'gundo'
-Plugin 'L9'  " dependancy of fuf
-Plugin 'vim-scripts/fuzzyfinder'
-Plugin 'mwesterhof/plantuml-syntax'
-
-" testing
-" Plugin 'davidhalter/jedi-vim'  " needs jedi installed (global pip install)
-Plugin 'airblade/vim-gitgutter'
-Plugin 'gregsexton/gitv'
-Plugin 'croaker/mustang-vim'
-
-
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-vinegar'
+Plug 'scrooloose/syntastic'
+Plug 'mattsacks/vim-eddie'
+Plug 'tpope/vim-fugitive'
+Plug 'bling/vim-airline'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'taglist.vim'
+Plug 'vimwiki/vimwiki'
+Plug 'altercation/vim-colors-solarized'
+Plug 'vim-scripts/TeTrIs.vim'
+Plug 'uguu-org/vim-matrix-screensaver'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mileszs/ack.vim'
+Plug 'msanders/snipmate.vim'
+Plug 'gundo'
+Plug 'vim-scripts/fuzzyfinder' | Plug 'L9'
+Plug 'mwesterhof/plantuml-syntax'
+Plug 'airblade/vim-gitgutter'
+Plug 'gregsexton/gitv'
+Plug 'croaker/mustang-vim'
+call plug#end()
