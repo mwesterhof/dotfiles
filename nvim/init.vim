@@ -2,15 +2,15 @@
 
 source ~/.vimrc_plugins
 
-" stuff to check out
 set completeopt=longest,menuone
-set wildmode=list:longest
+set wildmode=list:full
 set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
+set path+=**
 " https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
 
 " basic usability stuff
-
-colorscheme default
+colorscheme koehler
+set background=dark
 
 set number
 
@@ -22,7 +22,7 @@ set clipboard=unnamedplus
 set mouse=a
 set cursorline
 
-syntax on
+" syntax on
 
 set encoding=utf-8
 set ttyfast

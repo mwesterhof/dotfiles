@@ -6,7 +6,7 @@ export ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="avit"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,6 +83,12 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+DEFAULT_USER='mephisto'
+
+# the following trick forces zsh to rely on ~/.dircolors, if present
+# to tweak colors, generate this file with `dircolors --print-database`, and adjust
+unset LS_COLORS
 
 PATH=~/bin:$PATH
 

@@ -1,22 +1,24 @@
 call plug#begin('~/.vim/plugged')
+
+" needs
 Plug 'tpope/vim-vinegar'
-Plug 'scrooloose/syntastic'
-Plug 'mattsacks/vim-eddie'
-Plug 'tpope/vim-fugitive'
 Plug 'bling/vim-airline'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'taglist.vim'
-Plug 'vimwiki/vimwiki'
-Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/TeTrIs.vim'
-Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
-Plug 'msanders/snipmate.vim'
-Plug 'gundo'
-Plug 'vim-scripts/fuzzyfinder' | Plug 'L9'
 Plug 'mwesterhof/plantuml-syntax'
 Plug 'airblade/vim-gitgutter'
-Plug 'gregsexton/gitv'
-Plug 'croaker/mustang-vim'
+Plug 'tpope/vim-fugitive'
+
+" may drops
+Plug 'taglist.vim'
+Plug 'altercation/vim-colors-solarized'
+
+" might replace
+Plug 'scrooloose/syntastic' " NeoMake?
+
+" don't care
+Plug 'vim-scripts/TeTrIs.vim'
+Plug 'uguu-org/vim-matrix-screensaver'
+Plug 'gundo'
+
 call plug#end()
