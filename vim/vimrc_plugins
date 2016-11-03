@@ -14,11 +14,15 @@ Plug 'taglist.vim'
 Plug 'altercation/vim-colors-solarized'
 
 " might replace
-Plug 'scrooloose/syntastic' " NeoMake?
+" Plug 'scrooloose/syntastic' " NeoMake?
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
 Plug 'uguu-org/vim-matrix-screensaver'
 Plug 'gundo'
+
+" try
+" Plug 'neomake/neomake'
+Plug 'scrooloose/syntastic'
 
 call plug#end()

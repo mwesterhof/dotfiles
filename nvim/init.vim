@@ -1,10 +1,11 @@
 " New and improved vundle-enabled vimrc
 
+cd ~/dev
 source ~/.vimrc_plugins
 
-set completeopt=longest,menuone
+set completeopt=preview,menuone
 set wildmenu
-set wildmode=list:full
+set wildmode=full
 set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 set path+=**
 " https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
