@@ -94,6 +94,7 @@ map <Down> <C-e><C-e>
 set scrolloff=3
 
 vmap <leader>f :fold<CR>
+nmap <leader>f :find 
 map T :TlistToggle<CR>10<C-w><
 map <F6> :set lines=999<CR>:set columns=999<CR>
 
@@ -164,6 +165,7 @@ endif
 
 " custom commands
 command Sblame :%!svn blame %
+command Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
 
 " project specific rc files sound pretty bloody awesome
 set exrc
