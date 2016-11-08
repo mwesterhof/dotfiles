@@ -1,5 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
+" colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'ryanpcmcquen/true-monochrome_vim'
+Plug 'lokaltog/vim-distinguished'
+
 " needs
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
@@ -11,7 +16,6 @@ Plug 'tpope/vim-fugitive'
 
 " may drops
 Plug 'taglist.vim'
-Plug 'altercation/vim-colors-solarized'
 
 " might replace
 " Plug 'scrooloose/syntastic' " NeoMake?

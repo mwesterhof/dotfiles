@@ -12,9 +12,9 @@ set path+=**
 
 " basic usability stuff
 colorscheme koehler
-set background=dark
 
-set number
+" disabling for now, can be enabled with <leader>n
+" set number
 set nobackup
 set noswapfile
 set backspace=indent,eol,start
@@ -73,6 +73,7 @@ map <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
 map <leader>e :e $MYVIMRC<CR>
 map <leader><space> :bn<cr>
 
+map <leader>n :set number!<cr>
 map <leader>N :vs ~/notes<cr>
 map <leader>m :make<cr>
 

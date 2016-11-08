@@ -85,6 +85,7 @@ source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 DEFAULT_USER='mephisto'
+PGUSER=postgres
 
 # the following trick forces zsh to rely on ~/.dircolors, if present
 # to tweak colors, generate this file with `dircolors --print-database`, and adjust
