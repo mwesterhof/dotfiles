@@ -22,6 +22,24 @@ function! CycleNumberSetting()
         setlocal nonumber
     endif
 endfunction
+
+function! ToggleHardMode()
+    if !exists('g:hardmode_enabled')
+        echo "enabling hard mode (no hjkl)"
+        nnoremap h <nop>
+        nnoremap j <nop>
+        nnoremap k <nop>
+        nnoremap l <nop>
+        let g:hardmode_enabled = 1
+    else
+        echo "disabling hard mode"
+        nunmap h
+        nunmap j
+        nunmap k
+        nunmap l
+        unlet g:hardmode_enabled
+    endif
+endfunction
 " }}}
 
 
