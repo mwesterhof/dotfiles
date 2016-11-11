@@ -118,26 +118,26 @@ endif
 let mapleader=","
 nnoremap <leader>o :e http://localhost:8000/
 
-nnoremap <leader>c :q<cr>
+nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>
-nnoremap <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
-nnoremap <leader>e :e $MYVIMRC<CR>
-nnoremap <leader><space> :bn<cr>
+nnoremap <silent> <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
+nnoremap <silent> <leader>e :e $MYVIMRC<CR>
+nnoremap <silent> <leader><space> :bn<cr>
 
-nnoremap <leader>n :call CycleNumberSetting()<cr>
+nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
-nnoremap <leader>N :vs ~/notes<cr>
-nnoremap <leader>m :make<cr>
+nnoremap <silent> <leader>N :vs ~/notes<cr>
+nnoremap <silent> <leader>m :make<cr>
 
 nnoremap <leader><leader> @q
-vnoremap <leader>f :fold<CR>
+vnoremap <silent> <leader>f :fold<CR>
 nnoremap <leader>f :vert sfind 
-nnoremap T :TlistToggle<CR>10<C-w><
+nnoremap <silent> T :TlistToggle<CR>10<C-w><
 
 nnoremap ; :
-nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
+nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
-nnoremap <F11> :Fs<cr><cr>
+nnoremap <silent> <F11> :Fs<cr><cr>
 
 " quick markdown headers
 autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
