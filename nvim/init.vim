@@ -5,6 +5,26 @@
 cd ~/dev
 source ~/.vimrc_plugins
 
+
+" functions {{{
+function! CycleNumberSetting()
+    if !exists('b:number_toggle_value')
+        let b:number_toggle_value = 1
+        setlocal number
+        setlocal norelativenumber
+    elseif b:number_toggle_value == 1
+        let b:number_toggle_value = 2
+        setlocal nonumber
+        setlocal relativenumber
+    elseif b:number_toggle_value == 2
+        unlet b:number_toggle_value
+        setlocal norelativenumber
+        setlocal nonumber
+    endif
+endfunction
+" }}}
+
+
 " search and completion {{{
 set completeopt=preview,menuone
 set wildmenu
@@ -104,7 +124,8 @@ nnoremap <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader><space> :bn<cr>
 
-nnoremap <leader>n :setlocal number!<cr>
+nnoremap <leader>n :call CycleNumberSetting()<cr>
+
 nnoremap <leader>N :vs ~/notes<cr>
 nnoremap <leader>m :make<cr>
 
@@ -116,6 +137,7 @@ nnoremap T :TlistToggle<CR>10<C-w><
 nnoremap ; :
 nnoremap <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
+nnoremap <F11> :Fs<cr><cr>
 
 " quick markdown headers
 autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
