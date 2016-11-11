@@ -137,7 +137,7 @@ nnoremap <silent> T :TlistToggle<CR>10<C-w><
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
-nnoremap <silent> <F11> :Fs<cr><cr>
+nnoremap <silent> <F6> :Fs<cr><cr>
 
 " quick markdown headers
 autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
