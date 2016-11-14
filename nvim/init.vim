@@ -14,7 +14,7 @@ function! CycleNumberSetting()
         setlocal norelativenumber
     elseif b:number_toggle_value == 1
         let b:number_toggle_value = 2
-        setlocal nonumber
+        setlocal number
         setlocal relativenumber
     elseif b:number_toggle_value == 2
         unlet b:number_toggle_value
@@ -105,9 +105,6 @@ highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
 highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-" vim-airline fu
-set laststatus=2
-
 "disable all gui options but scroll bars
 set go-=T 
 set go+=lLrRbB
@@ -182,9 +179,13 @@ set scrolloff=3
 
 
 " plugin tweaks {{{
-" gitgutter (related) tweaks
+
+" gitgutter
 set updatetime=1000
 let g:netrw_winsize = ""
+
+" vim-airline
+set laststatus=2
 " }}}
 
 
