@@ -190,7 +190,12 @@ let g:netrw_winsize = ""
 
 " other {{{
 autocmd BufRead,BufNew *.md setlocal filetype=markdown
+
+augroup vim
+autocmd!
 autocmd FileType vim :setlocal foldmethod=marker
+autocmd FileType vim :nnoremap <leader>r :source %<cr>
+augroup END
 
 if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
