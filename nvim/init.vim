@@ -40,6 +40,16 @@ function! ToggleHardMode()
         unlet g:hardmode_enabled
     endif
 endfunction
+
+function! NightMode()
+    colorscheme koehler
+    hi NonText guifg=bg
+endfunction
+
+function! DayMode()
+    colorscheme evening
+    hi NonText guifg=bg
+endfunction
 " }}}
 
 
@@ -130,6 +140,8 @@ endif
 
 
 " custom mappings {{{
+inoremap <esc> <nop>
+inoremap <c-c> <nop>
 let mapleader=","
 nnoremap <leader>o :e http://localhost:8000/
 
@@ -172,8 +184,8 @@ augroup END
 
 
 " scrolling {{{
-nnoremap <Up> <C-y><C-y>
-nnoremap <Down> <C-e><C-e>
+nnoremap <Up> 4<C-y>
+nnoremap <Down> 4<C-e>
 set scrolloff=3
 " }}}
 

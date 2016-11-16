@@ -28,5 +28,6 @@ Plug 'gundo'
 " try
 " Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 
 call plug#end()
