@@ -13,6 +13,7 @@ Plug 'mileszs/ack.vim'
 Plug 'mwesterhof/plantuml-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 
 " may drops
 Plug 'taglist.vim'
@@ -28,6 +29,6 @@ Plug 'gundo'
 " try
 " Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 
 call plug#end()

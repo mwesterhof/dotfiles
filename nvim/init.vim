@@ -108,11 +108,16 @@ set diffopt=filler,vertical
 
 " pretties {{{
 colorscheme evening
+
 " mute the end-of-file tildes
 hi NonText guifg=bg
 
 highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
 highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
+
+hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
+hi CtrlSpaceSelected guifg=#66ff66 guibg=NONE gui=italic ctermfg=9 ctermbg=NONE term=bold cterm=bold
+
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 "disable all gui options but scroll bars
@@ -198,6 +203,9 @@ let g:netrw_winsize = ""
 
 " vim-airline
 set laststatus=2
+
+" fix ctrl-space's hotkey (derp)
+nnoremap <c-space> :CtrlSpace<cr>
 " }}}
 
 
