@@ -14,12 +14,10 @@ Plug 'mwesterhof/plantuml-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'majutsushi/tagbar'
 
 " may drops
-Plug 'taglist.vim'
-
-" might replace
-" Plug 'scrooloose/syntastic' " NeoMake?
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
@@ -29,6 +27,5 @@ Plug 'gundo'
 " try
 " Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
-Plug 'vim-ctrlspace/vim-ctrlspace'
 
 call plug#end()

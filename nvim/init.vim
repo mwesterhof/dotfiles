@@ -169,7 +169,7 @@ nnoremap <silent> <leader>m :make<cr>
 nnoremap <leader><leader> @q
 vnoremap <silent> <leader>f :fold<CR>
 nnoremap <leader>f :vert sfind 
-nnoremap <silent> T :TlistToggle<CR>10<C-w><
+nnoremap <silent> T :TagbarToggle<CR>
 
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
