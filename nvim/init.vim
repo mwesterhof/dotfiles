@@ -43,12 +43,25 @@ endfunction
 
 function! NightMode()
     colorscheme koehler
-    hi NonText guifg=bg
+    call FixHighlights()
 endfunction
 
 function! DayMode()
     colorscheme evening
-    hi NonText guifg=bg
+    call FixHighlights()
+endfunction
+
+function! FixHighlights()
+    " mute the end-of-file tildes
+    highlight NonText guifg=bg
+
+    " make search menus less fugly
+    highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
+    highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
+
+    " same for c-space
+    hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
+    hi CtrlSpaceSelected guifg=#66ff66 guibg=NONE gui=italic ctermfg=9 ctermbg=NONE term=bold cterm=bold
 endfunction
 " }}}
 
@@ -108,15 +121,7 @@ set diffopt=filler,vertical
 
 " pretties {{{
 colorscheme evening
-
-" mute the end-of-file tildes
-hi NonText guifg=bg
-
-highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
-highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
-
-hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
-hi CtrlSpaceSelected guifg=#66ff66 guibg=NONE gui=italic ctermfg=9 ctermbg=NONE term=bold cterm=bold
+call FixHighlights()
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
