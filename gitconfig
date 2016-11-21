@@ -4,9 +4,9 @@
 
 [color]
     ui = true
-    status = always
-    log = always
-    diff = always
+    status = auto
+    log = auto
+    diff = auto
 
 [alias]
     st = status
