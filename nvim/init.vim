@@ -120,7 +120,7 @@ set diffopt=filler,vertical
 
 
 " pretties {{{
-colorscheme evening
+colorscheme koehler
 call FixHighlights()
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
