@@ -153,15 +153,18 @@ set linebreak
 if has('nvim')
     nnoremap <c-t> :call FancyOpenTerm()<cr>
     tnoremap <c-h> <C-\><C-n>
-    inoremap <c-h> <esc>
     set hidden
 endif
 " }}}
 
 
 " custom mappings {{{
+" the only way to exit insert mode is to use CTRL-h
+" this way, usage of editor and nvim term will be more consistent
 inoremap <esc> <nop>
 inoremap <c-c> <nop>
+inoremap <c-h> <esc>
+
 let mapleader=","
 nnoremap <leader>o :e http://localhost:8000/
 
