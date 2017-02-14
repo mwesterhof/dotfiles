@@ -7,6 +7,16 @@ source ~/.vimrc_plugins
 
 
 " functions {{{
+function! FancyOpenTerm()
+    let l:name=input("name of new terminal: ")
+    if l:name==''
+        let l:name="term"
+    endif
+    terminal
+    execute "file " . l:name
+    startinsert
+endfunction
+
 function! CycleNumberSetting()
     if !exists('b:number_toggle_value')
         let b:number_toggle_value = 1
@@ -141,7 +151,7 @@ set linebreak
 
 " neovim specific stuff {{{
 if has('nvim')
-    nnoremap <c-t> :b term<cr>i
+    nnoremap <c-t> :call FancyOpenTerm()<cr>
     tnoremap <c-h> <C-\><C-n>
     inoremap <c-h> <esc>
     set hidden
