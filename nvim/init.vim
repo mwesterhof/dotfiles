@@ -7,6 +7,18 @@ source ~/.vimrc_plugins
 
 
 " functions {{{
+
+" 2 wrapper functions to toggle TODO items in my markdown docs
+" A bit hacky and overly specific
+function! ToggleStrikeTodo()
+    let l:currentline = getline('.')
+    if l:currentline =~ '<strike>'
+        normal 0^wd%$d%
+    else
+        normal 0^wi<strike>$A</strike>
+    endif
+endfunction
+
 function! FancyOpenTerm()
     let l:name=input("name of new terminal: ")
     if l:name==''
@@ -171,12 +183,14 @@ nnoremap <leader>o :e http://localhost:8000/
 nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>
 nnoremap <silent> <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
-nnoremap <silent> <leader>e :e $MYVIMRC<CR>
+nnoremap <silent> <leader>e :e .<CR>
+nnoremap <silent> <leader>E :e $MYVIMRC<CR>
 nnoremap <silent> <leader><space> :bn<cr>
 
 nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
-nnoremap <silent> <leader>N :vs ~/notes<cr>
+" nnoremap <silent> <leader>N :vs ~/notes<cr>
+nnoremap <silent> <leader>N :vs ~/Documents/notes/docs<cr>
 nnoremap <silent> <leader>m :make<cr>
 
 nnoremap <leader><leader> @q
@@ -192,6 +206,9 @@ nnoremap <silent> <F6> :Fs<cr><cr>
 " quick markdown headers
 autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
 autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
+
+" toggle todo items in markdown (html strikeout)
+autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 " }}}
 
 
