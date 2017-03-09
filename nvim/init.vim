@@ -6,6 +6,24 @@ cd ~/dev
 source ~/.vimrc_plugins
 
 
+" experimental window switch mappings (all hail spacemacs) {{{
+function! MapSpaceWindowSwappers()
+    let l:i = 1
+    while l:i <= 9
+        execute 'nnoremap <space>' . l:i . ' : ' . l:i . 'windo w<cr>'
+        let l:i += 1
+    endwhile
+endfunction
+
+function! UnmapSpaceWindowSwappers()
+    let l:i = 1
+    while l:i <= 9
+        execute 'nunmap <space>' . l:i . '<cr>'
+        let l:i += 1
+    endwhile
+endfunction
+" }}}
+
 " functions {{{
 
 " 2 wrapper functions to toggle TODO items in my markdown docs
