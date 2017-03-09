@@ -10,7 +10,7 @@ source ~/.vimrc_plugins
 function! MapSpaceWindowSwappers()
     let l:i = 1
     while l:i <= 9
-        execute 'nnoremap <space>' . l:i . ' : ' . l:i . 'windo w<cr>'
+        execute 'nnoremap <space>' . l:i . ' : ' . l:i . 'wincmd w<cr>'
         let l:i += 1
     endwhile
 endfunction
@@ -22,6 +22,8 @@ function! UnmapSpaceWindowSwappers()
         let l:i += 1
     endwhile
 endfunction
+
+call MapSpaceWindowSwappers()
 " }}}
 
 " functions {{{
