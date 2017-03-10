@@ -6,26 +6,6 @@ cd ~/dev
 source ~/.vimrc_plugins
 
 
-" experimental window switch mappings (all hail spacemacs) {{{
-function! MapSpaceWindowSwappers()
-    let l:i = 1
-    while l:i <= 9
-        execute 'nnoremap <space>' . l:i . ' : ' . l:i . 'wincmd w<cr>'
-        let l:i += 1
-    endwhile
-endfunction
-
-function! UnmapSpaceWindowSwappers()
-    let l:i = 1
-    while l:i <= 9
-        execute 'nunmap <space>' . l:i . '<cr>'
-        let l:i += 1
-    endwhile
-endfunction
-
-call MapSpaceWindowSwappers()
-" }}}
-
 " functions {{{
 
 " 2 wrapper functions to toggle TODO items in my markdown docs
@@ -104,6 +84,14 @@ function! FixHighlights()
     " same for c-space
     hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
     hi CtrlSpaceSelected guifg=#66ff66 guibg=NONE gui=italic ctermfg=9 ctermbg=NONE term=bold cterm=bold
+endfunction
+
+function! MapSpaceWindowSwappers()
+    let l:i = 1
+    while l:i <= 9
+        execute 'nnoremap <silent> <space>' . l:i . ' :' . l:i . 'wincmd w<cr>'
+        let l:i += 1
+    endwhile
 endfunction
 " }}}
 
@@ -229,6 +217,9 @@ autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
 
 " toggle todo items in markdown (html strikeout)
 autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
+
+" map <space>1-9 to window positions <3
+call MapSpaceWindowSwappers()
 " }}}
 
 
