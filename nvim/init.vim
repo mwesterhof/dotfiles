@@ -205,6 +205,7 @@ nnoremap <leader><leader> @q
 vnoremap <silent> <leader>f :fold<CR>
 nnoremap <leader>f :vert sfind 
 nnoremap <silent> T :TagbarToggle<CR>
+nnoremap <silent> <leader>gs :Gstatus<CR>
 
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
