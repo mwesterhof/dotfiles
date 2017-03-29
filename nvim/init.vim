@@ -24,8 +24,12 @@ function! FancyOpenTerm()
     if l:name==''
         let l:name="term"
     endif
-    terminal
-    execute "file " . l:name
+    if bufexists(l:name)
+        execute "buffer " . l:name
+    else
+        terminal
+        execute "file " . l:name
+    endif
     startinsert
 endfunction
 
