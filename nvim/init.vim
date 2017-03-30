@@ -20,7 +20,7 @@ function! ToggleStrikeTodo()
 endfunction
 
 function! FancyOpenTerm()
-    let l:name=input("name of new terminal: ")
+    let l:name=input("name of terminal to create or switch to (term): ")
     if l:name==''
         let l:name="term"
     endif
