@@ -30,7 +30,22 @@ function! FancyOpenTerm()
         terminal
         execute "file " . l:name
     endif
-    startinsert
+endfunction
+
+function! FancyOpenScratch()
+    " opens scratch buffer, much the same way FancyOpenTerm works
+    " named buffers are happy buffers
+    let l:name=input("name of scratch buffer to create or switch to (scratch): ")
+    if l:name==''
+        let l:name="scratch"
+    endif
+    if bufexists(l:name)
+        execute "buffer " . l:name
+    else
+        enew
+        setlocal buftype=nofile
+        execute "file " . l:name
+    endif
 endfunction
 
 function! CycleNumberSetting()
@@ -194,14 +209,13 @@ nnoremap <leader>o :e http://localhost:8000/
 
 nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>
-nnoremap <silent> <leader>S :vnew<CR>:setlocal buftype=nofile<CR>
+nnoremap <silent> <c-s> :call FancyOpenScratch()<cr>
 nnoremap <silent> <leader>e :e .<CR>
 nnoremap <silent> <leader>E :e $MYVIMRC<CR>
 nnoremap <silent> <leader><space> :bn<cr>
 
 nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
-" nnoremap <silent> <leader>N :vs ~/notes<cr>
 nnoremap <silent> <leader>N :vs ~/Documents/notes/docs<cr>
 nnoremap <silent> <leader>m :make<cr>
 
