@@ -221,7 +221,10 @@ nnoremap <silent> <leader>m :make<cr>
 
 nnoremap <leader><leader> @q
 vnoremap <silent> <leader>f :fold<CR>
-nnoremap <leader>f :vert sfind 
+" perform :find, open result in new vertical window
+nnoremap <silent> <leader>f :vertical sfind
+" open file under cursor in new vertical window
+nnoremap <silent> <leader>F :vertical wincmd f<cr>
 nnoremap <silent> T :TagbarToggle<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 
@@ -307,8 +310,8 @@ else
 endif
 
 " custom commands
-command Sblame :%!svn blame %
-command Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
+command! Sblame :%!svn blame %
+command! Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
 
 " project specific rc files sound pretty bloody awesome
 set exrc
