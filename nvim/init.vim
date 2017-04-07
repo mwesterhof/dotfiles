@@ -274,6 +274,7 @@ set laststatus=2
 
 " fix ctrl-space's hotkey (derp)
 nnoremap <c-space> :CtrlSpace<cr>
+nnoremap <F5> :MundoToggle<cr>
 " }}}
 
 

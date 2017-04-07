@@ -16,13 +16,13 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'majutsushi/tagbar'
+Plug 'simnalamburt/vim-mundo'
 
 " may drops
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
 Plug 'uguu-org/vim-matrix-screensaver'
-Plug 'gundo'
 
 " try
 " Plug 'neomake/neomake'
