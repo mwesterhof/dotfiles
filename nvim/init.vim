@@ -8,6 +8,18 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
+" Quick dev environment reset
+function! GoGoGadgetDeveloper()
+    only
+    bufdo bdelete!
+    edit .
+    vsplit
+    terminal
+    normal <c-h>
+    file term
+    startinsert
+endfunction
+
 " 2 wrapper functions to toggle TODO items in my markdown docs
 " A bit hacky and overly specific
 function! ToggleStrikeTodo()
@@ -313,6 +325,7 @@ endif
 " custom commands
 command! Sblame :%!svn blame %
 command! Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
+command! Go :call GoGoGadgetDeveloper()
 
 " project specific rc files sound pretty bloody awesome
 set exrc
