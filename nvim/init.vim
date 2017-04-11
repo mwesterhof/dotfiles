@@ -10,13 +10,18 @@ source ~/.vimrc_plugins
 
 " Quick dev environment reset
 function! GoGoGadgetDeveloper()
+    " cmdheight hack to silence prompt
+    " will reset at the end
+    let l:cmdheight_old = &cmdheight
+    set cmdheight=3
     only
-    bufdo bdelete!
+    bufdo bwipeout!
     edit .
     vsplit
     terminal
     normal <c-h>
     file term
+    let &cmdheight = l:cmdheight_old
     startinsert
 endfunction
 
