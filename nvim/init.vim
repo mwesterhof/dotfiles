@@ -126,14 +126,14 @@ function! FixHighlights()
     hi TabLineFill ctermbg=DarkGrey
 
     " selected (text, background)
-    hi TabLineSel ctermfg=Black ctermbg=White
+    hi TabLineSel ctermfg=DarkGreen ctermbg=Black
 
     " other (text, background)
-    hi TabLine ctermfg=DarkGrey ctermbg=LightGrey
+    hi TabLine ctermfg=Black ctermbg=LightGrey
 
 endfunction
 
-function! MapSpaceWindowSwappers()
+function! MapSpaceWindowSwitchers()
     " is run once on startup
     let l:i = 1
     while l:i <= 9
@@ -274,7 +274,7 @@ autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
 autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 
 " map <space>1-9 to window positions <3
-call MapSpaceWindowSwappers()
+call MapSpaceWindowSwitchers()
 " }}}
 
 
