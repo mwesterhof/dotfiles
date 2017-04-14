@@ -120,9 +120,21 @@ function! FixHighlights()
     " same for c-space
     hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
     hi CtrlSpaceSelected guifg=#66ff66 guibg=NONE gui=italic ctermfg=9 ctermbg=NONE term=bold cterm=bold
+
+    " Tab bar stuff
+    " line
+    hi TabLineFill ctermbg=DarkGrey
+
+    " selected (text, background)
+    hi TabLineSel ctermfg=Black ctermbg=White
+
+    " other (text, background)
+    hi TabLine ctermfg=DarkGrey ctermbg=LightGrey
+
 endfunction
 
 function! MapSpaceWindowSwappers()
+    " is run once on startup
     let l:i = 1
     while l:i <= 9
         execute 'nnoremap <silent> <space>' . l:i . ' :' . l:i . 'wincmd w<cr>'
@@ -202,6 +214,10 @@ set go-=lLrRbB
 set splitbelow
 set splitright
 set linebreak
+
+" makes :sb switch to window if buffer is already open there
+" for now, also switch to tab, see how that goes
+set switchbuf=useopen,usetab
 " }}}
 
 
