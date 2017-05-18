@@ -111,7 +111,7 @@ endfunction
 
 function! FixHighlights()
     " mute the end-of-file tildes
-    highlight NonText guifg=bg
+    highlight EndOfBuffer ctermfg=darkgrey guifg=darkgrey
 
     " make search menus less fugly
     highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
@@ -130,7 +130,6 @@ function! FixHighlights()
 
     " other (text, background)
     hi TabLine ctermfg=Black ctermbg=LightGrey
-
 endfunction
 
 function! MapSpaceWindowSwitchers()
