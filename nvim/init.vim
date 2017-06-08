@@ -238,6 +238,7 @@ inoremap <c-h> <esc>
 
 let mapleader=","
 nnoremap <leader>o :e http://localhost:8000/
+nnoremap <leader>O :vs http://localhost:8000/
 
 nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>

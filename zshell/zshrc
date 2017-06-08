@@ -37,6 +37,7 @@ alias doco="docker-compose"
 alias yolo="git pull --rebase && git push"
 alias killem="ps aux |grep runserver |grep -v grep |awk '{print \$2}' |xargs kill"
 alias vi="nvim"
+alias runtags="ctags -R --languages=Python ."
 
 # oh noes, ubuntu doesn't have pbcopy. if only we had some alternative
 alias pbcopy="xclip -i -selection clipboard"
