@@ -4,13 +4,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanpcmcquen/true-monochrome_vim'
 Plug 'lokaltog/vim-distinguished'
+Plug 'chriskempson/base16-vim'
 
 " needs
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
-Plug 'mwesterhof/plantuml-syntax'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
@@ -27,5 +27,7 @@ Plug 'uguu-org/vim-matrix-screensaver'
 " try
 " Plug 'neomake/neomake'
 Plug 'scrooloose/syntastic'
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'aklt/plantuml-syntax' | Plug 'scrooloose/vim-slumlord'
 
 call plug#end()

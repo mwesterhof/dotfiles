@@ -30,9 +30,9 @@ endfunction
 function! ToggleStrikeTodo()
     let l:currentline = getline('.')
     if l:currentline =~ '<strike>'
-        normal 0^wd%$d%
+        normal ma0^f wd%$d%`a
     else
-        normal 0^wi<strike>$A</strike>
+        normal ma0^f wi<strike>$A</strike>`a
     endif
 endfunction
 
@@ -319,6 +319,11 @@ autocmd!
 autocmd FileType vim :setlocal foldmethod=marker
 autocmd FileType vim :nnoremap <leader>r :source %<cr>
 augroup END
+
+" augroup markdown
+"     autocmd!
+"     autocmd FileType markdown :TableModeToggle
+" augroup END
 
 if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
