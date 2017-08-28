@@ -307,7 +307,13 @@ set laststatus=2
 
 " fix ctrl-space's hotkey (derp)
 nnoremap <c-space> :CtrlSpace<cr>
+
+" Mundo
 nnoremap <F5> :MundoToggle<cr>
+
+" make snippets from dotfiles dir available to snipmate
+set runtimepath+=$HOME/src/dotfiles/vim/runtime
+
 " }}}
 
 

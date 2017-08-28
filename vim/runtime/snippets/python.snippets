@@ -1,0 +1,44 @@
+snippet class
+	class ${1:Name}(${2:object}):
+		"""${3:docstring for $1}"""
+		def __init__(self, ${4:*args}):
+			super($1, self)
+			${0}
+
+snippet try Try/Except
+	try:
+		${1}
+	except ${2:Exception}:
+		${3}
+		
+snippet try Try/Except/Else
+	try:
+		${1}
+	except ${2:Exception}:
+		${3}
+	else:
+		${4}
+
+snippet try Try/Except/Finally
+	try:
+		${1}
+	except ${2:Exception}:
+		${3}
+	finally:
+		${4}
+
+snippet try Try/Except/Else/Finally
+	try:
+		${1}
+	except ${2:Exception}:
+		${3}
+	else:
+		${4}
+	finally:
+		${5}
+
+snippet debug pdb
+	import pdb; pdb.set_trace()
+
+snippet debug ipdb
+	import ipdb; ipdb.set_trace()
