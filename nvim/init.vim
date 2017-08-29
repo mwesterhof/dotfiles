@@ -8,6 +8,17 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
+" toggle xml/html tag between starting/ending
+function! ToggeHTMLTag()
+    normal "ayi<
+    if @a[0] ==# '/'
+        normal wF<lx
+    else
+        normal wF<li/
+    endif
+endfunction
+
+
 " Quick dev environment reset
 function! GoGoGadgetDeveloper()
     " cmdheight hack to silence prompt
@@ -283,11 +294,24 @@ augroup python
 autocmd!
 autocmd FileType python :iab <buffer> ptp import ipdb; ipdb.set_trace()
 autocmd FileType python :nnoremap <buffer> <leader>r :!python %<CR>
-autocmd FileType html :nnoremap <buffer> <leader>{ :set filetype=htmldjango<CR>
 autocmd FileType python :nnoremap <buffer> <leader>C mo/\v^((class)\|(def)) [^_].+<CR>`o
 augroup END
 " }}}
 
+" html shortcuts {{{
+augroup html
+autocmd!
+autocmd FileType html :nnoremap <buffer> <leader>t :call ToggeHTMLTag()<CR>
+autocmd FileType html :nnoremap <buffer> <leader>{ :set filetype=htmldjango<CR>
+augroup END
+" }}}
+
+" htmldjango shortcuts {{{
+augroup htmldjango
+autocmd!
+autocmd FileType htmldjango :nnoremap <buffer> <leader>{ :set filetype=html<CR>
+augroup END
+" }}}
 
 " scrolling {{{
 nnoremap <Up> 4<C-y>
