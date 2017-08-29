@@ -1,0 +1,31 @@
+# comments stuff
+snippet //
+	{# ${1} #}
+
+snippet #
+	{# ${1} #}
+
+snippet comment
+	{% comment %}
+		${1}
+	{% endcomment %}
+
+# tag stuff
+snippet %
+	{% ${1} %}
+
+snippet {
+	{{ ${1} }}
+
+snippet block
+	{% block ${1} %}
+		${2}
+	{% endblock %}
+
+snippet extends
+	{% extends "${1:base}.html" %}
+
+snippet for
+	{% for ${1:item} in ${2:iterable} %}
+		${3}
+	{% endfor %}

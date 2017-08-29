@@ -3,7 +3,10 @@ snippet class
 		"""${3:docstring for $1}"""
 		def __init__(self, ${4:*args}):
 			super($1, self)
-			${0}
+
+		def __${5:str}__(self):
+			${6:return $5(self)}
+
 
 snippet try Try/Except
 	try:

@@ -1,0 +1,11 @@
+snippet charfield
+	${1:name} = models.CharField(${2:_("$1")}, max_length=${3:200})
+
+snippet model
+	class ${1:Name}(models.Model):
+		"""${2:docstring for $1}"""
+		class Meta:
+			${3}
+
+		def __${4:unicode}__(self):
+			return $4()
