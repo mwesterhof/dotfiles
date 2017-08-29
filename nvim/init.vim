@@ -337,6 +337,11 @@ nnoremap <F5> :MundoToggle<cr>
 
 " make snippets from dotfiles dir available to snipmate
 set runtimepath+=$HOME/src/dotfiles/vim/runtime
+" set some aliases
+let g:snipMate = {}
+let g:snipMate.scope_aliases = {}
+let g:snipMate.scope_aliases['htmldjango'] = 'html,htmldjango'
+let g:snipMate.scope_aliases['python'] = 'python,django'
 
 " }}}
 
