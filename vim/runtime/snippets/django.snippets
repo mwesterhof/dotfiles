@@ -9,3 +9,17 @@ snippet model
 
 		def __${4:unicode}__(self):
 			return $4()
+
+snippet databases full
+	DATABASES = {
+		'default': {
+			'ENGINE': 'django.db.backends.postgresql_psycopg2',
+			'NAME': '${1:project_name}',
+			'USER': '${2:postgres'},
+			'HOST': '${3:localhost}',
+			'PASSWORD': '${4:password}',
+		}
+	}
+
+snippet databases url
+	DATABASES = values.DatabaseURLValue('pgsql://${1:127.0.0.1}/${2:hetnieuwefluiten}')

@@ -10,5 +10,78 @@ snippet enumerate
 
 snippet frame
 	\begin{frame}
-		${0}
+		${1}
 	\end{frame}
+
+
+snippet 2colframe
+	\begin{frame}{${1:title}}
+		\begin{columns}[T]
+			\begin{column}[T]{0.5\textwidth}
+				${2:left column}
+			\end{column}
+			\begin{column}[T]{0.5\textwidth}
+				${3:right column}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+
+snippet image
+	\includegraphics[height=${1:0.9}\textheight]{${2:images/image.png}}
+
+
+snippet beamer
+	\documentclass{beamer}
+	\usetheme{${1:warsaw}}
+
+	\author{${2:Marco Westerhof}}
+	\title{${3:title}}
+	\date{}
+
+	\begin{document}
+	\frame{\titlepage}
+	\frame{\frametitle{Programma}\tableofcontents}
+
+	% sections go here
+	% \input{sections/section_1}
+	${0}
+	\end{document}
+
+
+snippet article
+	\documentclass{article}
+
+	\author{${1:Marco Westerhof}}
+	\title{${2:title}}
+	${3:\date{}}
+
+	\begin{document}
+	${0}
+	\end{document}
+
+# document section shorthands
+
+snippet chapter
+	\chapter{${1:title}}
+	${0}
+
+
+snippet section
+	\section{${1:title}}
+	${0}
+
+
+snippet subsection
+	\subsection{${1:title}}
+	${0}
+
+
+snippet subsubsection
+	\subsubsection{${1:title}}
+	${0}
+
+# misc stuff
+
+snippet emph
+	\emph{${1}} ${0}

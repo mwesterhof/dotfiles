@@ -1,0 +1,17 @@
+snippet main
+	#include <stdio.h>
+
+
+	int main(int argc, char *argv[]) {
+		${1:printf("Hello world!\n");}
+		return 0;
+	}
+
+
+snippet ifndef
+	#ifndef ${1:HEADER}_H
+	#define $1_H
+
+	${0}
+
+	#endif

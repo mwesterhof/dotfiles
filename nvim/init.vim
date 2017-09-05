@@ -387,6 +387,7 @@ endif
 command! Sblame :%!svn blame %
 command! Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
 command! Go :call GoGoGadgetDeveloper()
+command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 
 " project specific rc files sound pretty bloody awesome
 set exrc
