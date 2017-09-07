@@ -32,6 +32,7 @@ PATH=~/bin:$PATH
 bindkey -v
 export KEYTIMEOUT=1
 alias no="ls"
+alias p=r
 alias mrs="./manage.py runserver"
 alias doco="docker-compose"
 alias yolo="git pull --rebase && git push"
