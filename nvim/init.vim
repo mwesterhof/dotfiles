@@ -8,8 +8,28 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
+function! TogglePythonComment()
+    normal 0^"ay$
+    if @a[0] ==# '#'
+        normal 2x
+    else
+        normal I# 
+    endif
+endfunction
+
+function! ToggleCStyleComment()
+    normal 0^"ay$
+    if @a[:2] ==# '/* '
+        normal 0^3x$F*hd$
+    else
+        normal I/* 
+        normal A */
+    endif
+endfunction
+
+
 " toggle xml/html tag between starting/ending
-function! ToggeHTMLTag()
+function! ToggleHTMLTag()
     normal "ayi<
     if @a[0] ==# '/'
         normal wF<lx
@@ -295,16 +315,19 @@ autocmd!
 autocmd FileType python :iab <buffer> ptp import ipdb; ipdb.set_trace()
 autocmd FileType python :nnoremap <buffer> <leader>r :!python %<CR>
 autocmd FileType python :nnoremap <buffer> <leader>C mo/\v^((class)\|(def)) [^_].+<CR>`o
+autocmd FileType python :nnoremap <buffer> <leader>/ :call TogglePythonComment()<CR>
 augroup END
 " }}}
+
 
 " html shortcuts {{{
 augroup html
 autocmd!
-autocmd FileType html :nnoremap <buffer> <leader>t :call ToggeHTMLTag()<CR>
+autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType html :nnoremap <buffer> <leader>{ :set filetype=htmldjango<CR>
 augroup END
 " }}}
+
 
 " htmldjango shortcuts {{{
 augroup htmldjango
@@ -312,6 +335,15 @@ autocmd!
 autocmd FileType htmldjango :nnoremap <buffer> <leader>{ :set filetype=html<CR>
 augroup END
 " }}}
+
+
+" c shortcuts {{{
+augroup cshortcuts
+autocmd!
+autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
+augroup END
+" }}}
+
 
 " scrolling {{{
 nnoremap <Up> 4<C-y>
