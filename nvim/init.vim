@@ -8,6 +8,7 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
+" comments
 function! TogglePythonComment()
     normal 0^"ay$
     if @a[0] ==# '#'
@@ -24,6 +25,26 @@ function! ToggleCStyleComment()
     else
         normal I/* 
         normal A */
+    endif
+endfunction
+
+function! ToggleHTMLComment()
+    normal 0^"ay$
+    if @a[:4] ==# '<!-- '
+        normal 0^5x$2F-hd$
+    else
+        normal I<!-- 
+        normal A -->
+    endif
+endfunction
+
+function! ToggleHTMLDjangoComment()
+    normal 0^"ay$
+    if @a[:2] ==# '{# '
+        normal 0^3x$F#hd$
+    else
+        normal I{# 
+        normal A #}
     endif
 endfunction
 
@@ -325,6 +346,7 @@ augroup html
 autocmd!
 autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType html :nnoremap <buffer> <leader>{ :set filetype=htmldjango<CR>
+autocmd FileType html :nnoremap <buffer> <leader>/ :call ToggleHTMLComment()<CR>
 augroup END
 " }}}
 
@@ -334,6 +356,7 @@ augroup htmldjango
 autocmd!
 autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType htmldjango :nnoremap <buffer> <leader>{ :set filetype=html<CR>
+autocmd FileType htmldjango :nnoremap <buffer> <leader>/ :call ToggleHTMLDjangoComment()<CR>
 augroup END
 " }}}
 
