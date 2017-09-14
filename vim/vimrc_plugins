@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " test
-Plug 'sk1418/QFGrep'
+Plug 'roman/golden-ratio'
 
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
@@ -19,6 +19,7 @@ Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'majutsushi/tagbar'
 Plug 'simnalamburt/vim-mundo'
+Plug 'sk1418/QFGrep'
 " Plug 'honza/vim-snippets' < great examples
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
 
