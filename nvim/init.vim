@@ -332,6 +332,7 @@ augroup END
 " htmldjango shortcuts {{{
 augroup htmldjango
 autocmd!
+autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType htmldjango :nnoremap <buffer> <leader>{ :set filetype=html<CR>
 augroup END
 " }}}
