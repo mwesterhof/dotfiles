@@ -48,6 +48,14 @@ function! ToggleHTMLDjangoComment()
     endif
 endfunction
 
+function! ToggleLatexComment()
+    normal 0^"ay$
+    if @a[0] ==# '%'
+        normal 2x
+    else
+        normal I% 
+    endif
+endfunction
 
 " toggle xml/html tag between starting/ending
 function! ToggleHTMLTag()
@@ -365,6 +373,16 @@ augroup END
 augroup cshortcuts
 autocmd!
 autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
+augroup END
+" }}}
+
+
+" tex shortcuts {{{
+augroup texshortcuts
+autocmd!
+autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
+autocmd FileType tex :nnoremap <buffer> <leader>/ :call ToggleLatexComment()<CR>
+autocmd FileType plaintex :set filetype tex<cr>
 augroup END
 " }}}
 

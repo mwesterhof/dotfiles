@@ -8,13 +8,13 @@ snippet enumerate
 		\item ${0}
 	\end{enumerate}
 
-snippet frame
+snippet frame plain
 	\begin{frame}
 		${1}
 	\end{frame}
 
 
-snippet 2colframe
+snippet frame 2column
 	\begin{frame}{${1:title}}
 		\begin{columns}[T]
 			\begin{column}[T]{0.5\textwidth}
@@ -49,7 +49,7 @@ snippet beamer
 	\end{document}
 
 
-snippet article
+snippet article plain
 	\documentclass{article}
 
 	\author{${1:Marco Westerhof}}
@@ -57,8 +57,39 @@ snippet article
 	${3:\date{}}
 
 	\begin{document}
+	\maketitle
+	\tableofcontents
+
 	${0}
 	\end{document}
+
+
+
+snippet article fancyhdr
+	\documentclass{article}
+	\usepackage{fancyhdr}
+	\pagestyle{fancy}
+
+	\lhead{lhead}
+	\chead{chead}
+	\rhead{rhead}
+
+	\lfoot{lfoot}
+	\cfoot{cfoot}
+	\rfoot{rfoot}
+
+	\author{${1:Marco Westerhof}}
+	\title{${2:title}}
+	${3:\date{}}
+
+	\begin{document}
+
+	\maketitle
+	\tableofcontents
+
+	${0}
+	\end{document}
+
 
 # document section shorthands
 
