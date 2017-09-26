@@ -1,8 +1,5 @@
 call plug#begin('~/.vim/plugged')
 
-" test
-Plug 'roman/golden-ratio'
-
 " colorschemes
 Plug 'altercation/vim-colors-solarized'
 Plug 'ryanpcmcquen/true-monochrome_vim'
@@ -27,7 +24,8 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
-Plug 'uguu-org/vim-matrix-screensaver'
+Plug 'roman/golden-ratio'
+Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
 " Plug 'neomake/neomake'

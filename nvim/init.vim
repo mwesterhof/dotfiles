@@ -257,7 +257,7 @@ set diffopt=filler,vertical
 
 
 " pretties {{{
-colorscheme koehler
+colorscheme distinguished
 call FixHighlights()
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
