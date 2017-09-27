@@ -382,7 +382,7 @@ augroup texshortcuts
 autocmd!
 autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
 autocmd FileType tex :nnoremap <buffer> <leader>/ :call ToggleLatexComment()<CR>
-autocmd FileType plaintex :set filetype tex<cr>
+let g:tex_flavor = "latex"
 augroup END
 " }}}
 
