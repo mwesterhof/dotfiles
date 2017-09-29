@@ -457,6 +457,9 @@ else
     let OS="windows"
 endif
 
+" temporary workaround to fix weird characters in MATE+neovim
+set guicursor=
+
 " custom commands
 command! Sblame :%!svn blame %
 command! Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
