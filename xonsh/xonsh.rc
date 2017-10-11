@@ -3,6 +3,8 @@
 from os import chdir, getcwd
 
 
+$VI_MODE = True
+
 xontrib load vox
 
 class DirStack:
