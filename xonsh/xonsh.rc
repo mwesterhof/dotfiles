@@ -1,0 +1,70 @@
+#!/usr/bin/python
+
+from os import chdir, getcwd
+
+
+xontrib load vox
+
+class DirStack:
+    favorites = [
+        '/home/mephisto/src/dotfiles',
+    ]
+    def __init__(self, limit=100):
+        self._limit = limit
+        self._reset()
+
+    def _reset(self):
+        self._jumplist = [
+            getcwd(),
+        ] + self.favorites
+
+    def _log_dir(self, d):
+        if not d in self._jumplist:
+            self._jumplist.append(d)
+            while len(self._jumplist) > self._limit:
+                self._jumplist.pop(-1)
+
+    def try_jump(self, keyword):
+        matches = [p for p in self._jumplist if keyword.upper() in p.upper()]
+        if not matches:
+            return
+
+        if len(matches) == 1:
+            chdir(matches[0])
+        else:
+            self.interactive(matches)
+
+    def interactive(self, matches=None):
+        if not matches:
+            matches = self._jumplist
+
+        for i, line in enumerate(matches):
+            print('{}: {}'.format(i, line))
+        requested = input('please choose a directory or (c)ancel: ')
+        try:
+            chdir(matches[int(requested)])
+        except (ValueError, IndexError):
+            pass
+
+
+_dirstack = DirStack()
+
+@events.on_chdir
+def _bookmark_dir(olddir, newdir, **kw):
+    _dirstack._log_dir(newdir)
+
+def _try_jump(args):
+    if args:
+        _dirstack.try_jump(args[0])
+    else:
+        _dirstack.interactive()
+
+
+aliases.update({
+    'cat': 'ccat --bg=dark',
+    'mrs': './manage.py runserver_plus',
+    'msh': './manage.py shell_plus',
+    'watchhtml': 'ag --html -l|entr touch manage.py &',
+    'runtags': 'ctags -R --languages=Python .',
+    'j': _try_jump,
+})
