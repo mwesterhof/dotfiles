@@ -15,6 +15,6 @@
     rekt = "log --graph --all --oneline --decorate"
     urekt = "log --graph --all --pretty=format:'%C(red)%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cD) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 [core]
-	editor = nvim
+	editor = vi
 [push]
 	default = simple
