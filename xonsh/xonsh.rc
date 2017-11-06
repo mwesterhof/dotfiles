@@ -64,7 +64,7 @@ def _try_jump(args):
 
 aliases.update({
     'cat': 'ccat --bg=dark',
-    'mrs': './manage.py runserver_plus',
+    'mrs': './manage.py runserver_plus --nopin',
     'msh': './manage.py shell_plus',
     'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --languages=Python .',

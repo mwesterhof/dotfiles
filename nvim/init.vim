@@ -223,8 +223,8 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-nnoremap <F1> :cN<CR>
-nnoremap <F2> :cn<CR>
+nnoremap <F2> :cN<CR>
+nnoremap <F3> :cn<CR>
 
 set tags=./tags;$HOME
 " }}}
@@ -416,6 +416,9 @@ let g:snipMate = {}
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['htmldjango'] = 'html,htmldjango'
 let g:snipMate.scope_aliases['python'] = 'python,django'
+
+" use markdown compatible table corners
+let g:table_mode_corner="|"
 
 " }}}
 
