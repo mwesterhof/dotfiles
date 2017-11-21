@@ -175,7 +175,7 @@ function! FixHighlights()
 
     " make search menus less fugly
     highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
-    highlight Search cterm=NONE ctermfg=black ctermbg=LightMagenta
+    highlight Search cterm=NONE ctermfg=black ctermbg=grey
 
     " same for c-space
     hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
@@ -248,6 +248,7 @@ set softtabstop=4
 set autoindent
 set nocindent
 set smartindent
+set wildignorecase " allows case insensitive tab complete for :b command. why this isn't turned on by default, i don't know
 
 set showmode
 set nowrap
@@ -408,6 +409,9 @@ nnoremap <c-space> :CtrlSpace<cr>
 
 " Mundo
 nnoremap <F5> :MundoToggle<cr>
+
+" Golden ratio
+nnoremap <leader>g :GoldenRatioToggle<cr>
 
 " make snippets from dotfiles dir available to snipmate
 set runtimepath+=$HOME/src/dotfiles/vim/runtime
