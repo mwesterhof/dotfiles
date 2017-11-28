@@ -237,7 +237,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set mouse=a
 set encoding=utf-8
-set ttyfast
+set ttyfast  " removed in neovim
 set ruler
 
 set expandtab
@@ -275,6 +275,9 @@ set splitbelow
 set splitright
 set linebreak
 
+" don't close buffers automatically
+set hidden
+
 " makes :sb switch to window if buffer is already open there
 " for now, also switch to tab, see how that goes
 set switchbuf=useopen,usetab
@@ -285,7 +288,6 @@ set switchbuf=useopen,usetab
 if has('nvim')
     nnoremap <c-t> :call FancyOpenTerm()<cr>
     tnoremap <c-h> <C-\><C-n>
-    set hidden
 endif
 " }}}
 
@@ -298,8 +300,12 @@ inoremap <c-c> <nop>
 inoremap <c-h> <esc>
 
 let mapleader=","
-nnoremap <leader>o :e http://localhost:8000/
-nnoremap <leader>O :vs http://localhost:8000/
+
+" o -> open that url in the browser
+" O -> open some (probably localhost) url in editor (source)
+" nnoremap <leader>o :OpenUrl http://localhost:8000/
+nnoremap <leader>o :!python -m webbrowser -t http://localhost:8000/
+nnoremap <leader>O :e http://localhost:8000/
 
 nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>
@@ -326,10 +332,6 @@ nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <silent> <F6> :Fs<cr><cr>
-
-" quick markdown headers
-autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
-autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
 
 " toggle todo items in markdown (html strikeout)
 autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
@@ -384,6 +386,14 @@ autocmd!
 autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
 autocmd FileType tex :nnoremap <buffer> <leader>/ :call ToggleLatexComment()<CR>
 let g:tex_flavor = "latex"
+augroup END
+" }}}
+
+" markdown shortcuts {{{
+augroup markdownshortcuts
+autocmd!
+autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
+autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
 augroup END
 " }}}
 

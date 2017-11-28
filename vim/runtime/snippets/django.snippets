@@ -23,3 +23,12 @@ snippet databases full
 
 snippet databases url
 	DATABASES = values.DatabaseURLValue('pgsql://${1:127.0.0.1}/${2:database}')
+
+snippet view
+	class ${1:Name}(${2:View}):
+		template_name = '${3:project}/${4:appname}/${5:template}.html'
+
+		def get_context_data(self, *args, **kwargs):
+			${6:return super($1, self).get_context_data(*args, **kwargs)}
+
+
