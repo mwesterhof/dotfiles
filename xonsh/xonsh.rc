@@ -61,6 +61,10 @@ def _try_jump(args):
     else:
         _dirstack.interactive()
 
+@events.vox_on_activate
+def post_activate(name, *args, **kwargs):
+    source @('/home/mephisto/.virtualenvs/{}/bin/post_activate'.format(name)) 2> /dev/null
+
 
 aliases.update({
     'cat': 'ccat --bg=dark',

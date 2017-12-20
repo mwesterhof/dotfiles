@@ -1,0 +1,15 @@
+project_path = '/home/mephisto/src/app_pages_test/'
+
+from os import environ
+from sys import path
+
+path.append('/home/mephisto/.virtualenvs/app_pages/lib/python3.5/site-packages/')
+path.append(project_path)
+environ['DJANGO_SETTINGS_MODULE'] = 'app_pages_test.settings.dev'
+import django
+django.setup()
+
+del path
+del environ
+cd @(project_path)
+del project_path
