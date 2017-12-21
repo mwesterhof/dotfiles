@@ -78,7 +78,7 @@ function! GoGoGadgetDeveloper()
     bufdo bwipeout!
     edit .
     vsplit
-    terminal
+    Terminal
     normal <c-h>
     file term
     let &cmdheight = l:cmdheight_old
@@ -104,7 +104,7 @@ function! FancyOpenTerm()
     if bufexists(l:name)
         execute "buffer " . l:name
     else
-        terminal
+        Terminal
         execute "file " . l:name
     endif
 endfunction
@@ -303,7 +303,6 @@ let mapleader=","
 
 " o -> open that url in the browser
 " O -> open some (probably localhost) url in editor (source)
-" nnoremap <leader>o :OpenUrl http://localhost:8000/
 nnoremap <leader>o :!python -m webbrowser -t http://localhost:8000/
 nnoremap <leader>O :e http://localhost:8000/
 
@@ -479,9 +478,11 @@ set guicursor=
 
 " custom commands
 command! Sblame :%!svn blame %
-command! Fs :!wmctrl -r ":ACTIVE:" -b toggle,fullscreen
 command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
+command! GetDate :r!date "\%F (\%A)"
+command! Terminal :terminal /usr/local/bin/xonsh
+
 
 " project specific rc files sound pretty bloody awesome
 set exrc
