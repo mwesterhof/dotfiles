@@ -65,7 +65,12 @@ def _try_jump(args):
 
 @events.vox_on_activate
 def post_activate(name, *args, **kwargs):
-    source @('/home/mephisto/.virtualenvs/{}/bin/post_activate'.format(name)) 2> /dev/null
+    from os import path
+    script_name = '/home/mephisto/.virtualenvs/{}/bin/post_activate'.format(name)
+
+    if path.exists(script_name):
+        print('loading {}'.format(script_name))
+        source @(script_name)
 
 
 aliases.update({
