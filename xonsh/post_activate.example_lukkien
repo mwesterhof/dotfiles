@@ -1,0 +1,23 @@
+# template for xonsh postactivate, compatible with typical(?) lukkien projects
+PROJECT = 'PROJECTNAME'
+
+project_path = '/home/mephisto/dev/{}/src'.format(PROJECT)
+
+from os import environ
+from sys import path
+
+path.append('/home/mephisto/.virtualenvs/{}/lib/python3.5/site-packages/'.format(PROJECT))
+path.append(project_path)
+environ.update({
+    'DJANGO_SETTINGS_MODULE': '{}.settings'.format(PROJECT),
+    'DJANGO_CONFIGURATION': 'Development'
+})
+from configurations import importer
+importer.install(check_options=True)
+
+import django
+django.setup()
+
+del path
+del environ
+del project_path
