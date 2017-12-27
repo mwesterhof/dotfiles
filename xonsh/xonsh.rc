@@ -81,7 +81,8 @@ aliases.update({
     'runtags': 'ctags -R --languages=Python .',
     'j': _try_jump,
     'pbcopy': "xclip -i -selection clipboard",
-    'pbpaste': "xclip -i -selection clipboard -o"
+    'pbpaste': "xclip -i -selection clipboard -o",
+    'tak': "bash -c \"git co `git branch|fzf`\""
 })
 
 $fzf_ssh_binding = Keys.ControlS
