@@ -80,6 +80,8 @@ aliases.update({
     'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --languages=Python .',
     'j': _try_jump,
+    'pbcopy': "xclip -i -selection clipboard",
+    'pbpaste': "xclip -i -selection clipboard -o"
 })
 
 $fzf_ssh_binding = Keys.ControlS
