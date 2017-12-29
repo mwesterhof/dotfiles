@@ -67,6 +67,11 @@ function! ToggleHTMLTag()
     endif
 endfunction
 
+" self explanatory
+function OpenRangerBuffer()
+    terminal EDITOR=nvim ranger
+    startinsert
+endfunction
 
 " Quick dev environment reset
 function! GoGoGadgetDeveloper()
@@ -482,6 +487,7 @@ command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 command! GetDate :r!date "\%F (\%A)"
 command! Terminal :terminal /usr/local/bin/xonsh
+command! Fm :call OpenRangerBuffer()
 
 
 " project specific rc files sound pretty bloody awesome

@@ -66,7 +66,10 @@ def _try_jump(args):
 @events.vox_on_activate
 def post_activate(name, *args, **kwargs):
     from os import path
-    script_name = '/home/mephisto/.virtualenvs/{}/bin/post_activate'.format(name)
+    venv_dir = '/home/mephisto/.virtualenvs/{}'.format(name)
+    script_name = '{}/bin/post_activate'.format(venv_dir)
+
+    _dirstack._log_dir('{}/lib/python3.5/site-packages'.format(venv_dir))
 
     if path.exists(script_name):
         print('loading {}'.format(script_name))
