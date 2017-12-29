@@ -328,7 +328,7 @@ vnoremap <silent> <leader>f :fold<CR>
 " perform :find, open result in new vertical window
 nnoremap <silent> <leader>f :vertical sfind
 " open file under cursor in new vertical window
-nnoremap <silent> <leader>F :vertical wincmd f<cr>
+nnoremap <silent> <leader>F :Fm<cr>
 nnoremap <silent> T :TagbarToggle<CR>
 nnoremap <silent> <leader>gs :Gstatus<CR>
 
