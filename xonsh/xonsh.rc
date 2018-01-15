@@ -5,6 +5,7 @@ from os import chdir, getcwd
 source-bash ~/.fzf.bash > /dev/null
 
 $VI_MODE = True
+$PGUSER = 'postgres'
 
 xontrib load vox
 xontrib load fzf-widgets
