@@ -64,3 +64,4 @@ eval "$(pyenv init - 2>/dev/null)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(pyenv virtualenv-init -)"

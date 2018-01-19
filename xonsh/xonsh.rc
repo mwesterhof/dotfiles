@@ -10,6 +10,39 @@ $PGUSER = 'postgres'
 xontrib load vox
 xontrib load fzf-widgets
 
+fuzzies = {
+    'git': [
+        'git status',
+        'git gud',
+        'git rekt',
+        'git add -p',
+    ],
+    'django': [
+        './manage.py runserver',
+        './manage.py runserver_plus --nopin',
+        './manage.py migrate',
+        './manage.py shell',
+        './manage.py shell_plus',
+    ],
+    'site': [
+        'python -m webbrowser -t https://builds2.lukkien.com',
+        'python -m webbrowser -t https://git.lukkien.com',
+        'python -m webbrowser -t https://kms.lukkien.com',
+    ],
+}
+
+def _fuzzy_command(args):
+    try:
+        available_commands = fuzzies[args[0]]
+    except (IndexError, KeyError):
+        available_commands = []
+        for _, commands in fuzzies.items():
+            available_commands.extend(commands)
+
+    command = $(echo @('\n'.join(available_commands)) |fzf |xargs echo)
+    @(command.split())
+
+
 class DirStack:
     favorites = [
         '/home/mephisto/src/dotfiles',
@@ -84,6 +117,7 @@ aliases.update({
     'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --languages=Python .',
     'j': _try_jump,
+    'a': _fuzzy_command,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
     'tak': "bash -c \"git co `git branch|fzf`\""
