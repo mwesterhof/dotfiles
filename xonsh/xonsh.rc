@@ -28,18 +28,40 @@ fuzzies = {
         'python -m webbrowser -t https://builds2.lukkien.com',
         'python -m webbrowser -t https://git.lukkien.com',
         'python -m webbrowser -t https://kms.lukkien.com',
+        'python -m webbrowser -t https://apps.timewax.com/calendar/',
+        'python -m webbrowser -t https://www.youtube.com',
+    ],
+    'xonsh': [
+        'vox activate {}',
     ],
 }
 
 def _fuzzy_command(args):
+    all_commands = []
+    for _, commands in fuzzies.items():
+        all_commands.extend(commands)
+            
     try:
-        available_commands = fuzzies[args[0]]
-    except (IndexError, KeyError):
-        available_commands = []
-        for _, commands in fuzzies.items():
-            available_commands.extend(commands)
+        keyword = args.pop(0)
+    except IndexError:
+        available_commands = all_commands
+    else:
+        try:
+            available_commands = fuzzies[keyword]
+        except KeyError:
+            available_commands = [command for command in all_commands if keyword in command]
 
-    command = $(echo @('\n'.join(available_commands)) |fzf |xargs echo)
+    if len(available_commands) == 1:
+        command = available_commands[0]
+    else:
+        command = $(echo @('\n'.join(available_commands)) |fzf |xargs echo)
+
+    command = command.strip()
+    if '{' in command and '}' in command:
+        arguments = input("'{}': ".format(command)).split()
+        command = command.format(*arguments)
+
+    print('[ {} ]'.format(command))
     @(command.split())
 
 
