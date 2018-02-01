@@ -69,7 +69,7 @@ def _fuzzy_command(args):
 
 
 def _run_trigger_command(args):
-    cmd = args[0]
+    cmd = ' '.join(args)
     full_cmd = ['bash', '-c', 'echo ~/.trigger |entr {}'.format(cmd)]
     @(full_cmd)
 
