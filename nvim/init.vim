@@ -324,6 +324,7 @@ nnoremap <silent> <leader>N :vs ~/Documents/notes/docs<cr>
 nnoremap <silent> <leader>m :make<cr>
 
 nnoremap <leader><leader> @q
+inoremap <leader><leader> <esc>
 vnoremap <silent> <leader>f :fold<CR>
 " perform :find, open result in new vertical window
 nnoremap <silent> <leader>f :vertical sfind
