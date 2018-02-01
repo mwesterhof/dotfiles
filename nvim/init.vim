@@ -337,6 +337,9 @@ nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <silent> <F6> :Fs<cr><cr>
 
+" clever way to kick off custom commands using trigger file mapped using entr
+nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
+
 " toggle todo items in markdown (html strikeout)
 autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 

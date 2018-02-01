@@ -65,6 +65,12 @@ def _fuzzy_command(args):
     @(command.split())
 
 
+def _run_trigger_command(args):
+    cmd = args[0]
+    full_cmd = ['bash', '-c', 'echo ~/.trigger |entr {}'.format(cmd)]
+    @(full_cmd)
+
+
 class DirStack:
     favorites = [
         '/home/mephisto/src/dotfiles',
@@ -137,9 +143,10 @@ aliases.update({
     'mrs': './manage.py runserver_plus --nopin',
     'msh': './manage.py shell_plus',
     'watchhtml': 'ag --html -l|entr touch manage.py &',
-    'runtags': 'ctags -R --languages=Python .',
+    'runtags': 'ctags -R --exclude=.tox --languages=Python .',
     'j': _try_jump,
     'a': _fuzzy_command,
+    't': _run_trigger_command,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
     'tak': "bash -c \"git co `git branch|fzf`\""
