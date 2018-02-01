@@ -30,6 +30,9 @@ fuzzies = {
         'python -m webbrowser -t https://kms.lukkien.com',
         'python -m webbrowser -t https://apps.timewax.com/calendar/',
         'python -m webbrowser -t https://www.youtube.com',
+        'python -m webbrowser -t https://apps.timewax.com/timesheets/',
+        'python -m webbrowser -t https://lukkien-digital.slack.com/',
+        'python -m webbrowser -t http://docs:8001/',
     ],
     'xonsh': [
         'vox activate {}',
