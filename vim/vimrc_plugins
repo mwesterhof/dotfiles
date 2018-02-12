@@ -24,7 +24,7 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
-Plug 'roman/golden-ratio'
+" Plug 'roman/golden-ratio'
 Plug 'vim-scripts/matrix.vim--Yang'
 
 " try

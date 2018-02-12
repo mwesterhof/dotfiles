@@ -338,6 +338,8 @@ nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <silent> <F6> :Fs<cr><cr>
 
+
+
 " clever way to kick off custom commands using trigger file mapped using entr
 nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
 
@@ -489,7 +491,7 @@ set guicursor=
 command! Sblame :%!svn blame %
 command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
-command! GetDate :r!date "\%F (\%A)"
+command! GetDate :r!date "+\%F (\%A)"
 command! Terminal :terminal /usr/local/bin/xonsh
 command! Fm :call OpenRangerBuffer()
 
