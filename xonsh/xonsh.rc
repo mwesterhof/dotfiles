@@ -16,6 +16,7 @@ fuzzies = {
         'git gud',
         'git rekt',
         'git add -p',
+        'git fetch --all --prune',
     ],
     'django': [
         './manage.py runserver',
