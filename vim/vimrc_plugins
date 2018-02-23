@@ -17,6 +17,7 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'majutsushi/tagbar'
 Plug 'simnalamburt/vim-mundo'
 Plug 'sk1418/QFGrep'
+Plug 'scrooloose/syntastic'
 " Plug 'honza/vim-snippets' < great examples
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
 
@@ -29,8 +30,8 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
 " Plug 'neomake/neomake'
-Plug 'scrooloose/syntastic'
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'easymotion/vim-easymotion'
 
 " not working properly (neovim issue?)
 " Plug 'aklt/plantuml-syntax' | Plug 'scrooloose/vim-slumlord'

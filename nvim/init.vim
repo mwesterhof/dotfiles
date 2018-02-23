@@ -399,6 +399,7 @@ let g:tex_flavor = "latex"
 augroup END
 " }}}
 
+
 " markdown shortcuts {{{
 augroup markdownshortcuts
 autocmd!
@@ -443,6 +444,10 @@ let g:snipMate.scope_aliases['python'] = 'python,django'
 
 " use markdown compatible table corners
 let g:table_mode_corner="|"
+
+" syntastic
+" let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
+let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " }}}
 
