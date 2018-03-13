@@ -454,6 +454,7 @@ let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " other {{{
 autocmd BufRead,BufNew *.md setlocal filetype=markdown
+autocmd TermOpen * startinsert
 
 augroup vim
 autocmd!
