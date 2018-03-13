@@ -129,6 +129,23 @@ def _try_jump(args):
     else:
         _dirstack.interactive()
 
+
+def _link_books(args):
+    if len(args) == 1:
+        name = args[0]
+        cmdline = 'ln -s /home/mephisto/Desktop/notebooks/{} books'.format(name)
+        print(cmdline)
+        @(cmdline.split())
+
+
+def _do_notify(args):
+    print(repr(args))
+    if args:
+        message = ' '.join(args)
+        cmdline = ['notify-send', '-u', 'critical', '{}'.format(message)]
+        @(cmdline)
+
+
 @events.vox_on_activate
 def post_activate(name, *args, **kwargs):
     from os import path
@@ -151,6 +168,8 @@ aliases.update({
     'j': _try_jump,
     'a': _fuzzy_command,
     't': _run_trigger_command,
+    'n': _do_notify,
+    'linkbooks': _link_books,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
     'tak': "bash -c \"git co `git branch|fzf`\""
