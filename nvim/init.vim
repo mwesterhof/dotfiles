@@ -221,7 +221,8 @@ set ignorecase
 set smartcase
 set nowrapscan
 
-nnoremap // :Ack<space>
+vnoremap / y:Ack <c-r>+<space> --python
+nnoremap // yiw:Ack <c-r>+<space> --python
 nnoremap <ESC><ESC> :ccl<cr>
 
 if executable('ag')
