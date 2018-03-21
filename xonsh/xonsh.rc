@@ -69,6 +69,10 @@ def _fuzzy_command(args):
     @(command.split())
 
 
+def _fuzzy_cd(args):
+    cd @$(ls -d */|fzf)
+
+
 def _run_trigger_command(args):
     cmd = ' '.join(args)
     full_cmd = ['bash', '-c', 'echo ~/.trigger |entr {}'.format(cmd)]
@@ -168,6 +172,8 @@ aliases.update({
     'a': _fuzzy_command,
     't': _run_trigger_command,
     'n': _do_notify,
+    'c': _fuzzy_cd,
+    'run_refresh_loop': 'bash -c "ag -l --python --html |entr delay_chrome_refresh"',
     'linkbooks': _link_books,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
