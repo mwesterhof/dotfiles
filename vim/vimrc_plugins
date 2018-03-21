@@ -8,6 +8,7 @@ Plug 'lokaltog/vim-distinguished'
 " needs
 Plug 'tpope/vim-vinegar'
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
 Plug 'airblade/vim-gitgutter'
