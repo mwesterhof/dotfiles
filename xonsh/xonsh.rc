@@ -155,7 +155,7 @@ def post_activate(name, *args, **kwargs):
     venv_dir = '/home/mephisto/.virtualenvs/{}'.format(name)
     script_name = '{}/bin/post_activate'.format(venv_dir)
 
-    _dirstack._log_dir('{}/lib/python3.5/site-packages'.format(venv_dir))
+    _dirstack._log_dir('{}/lib/python3.6/site-packages'.format(venv_dir))
 
     if path.exists(script_name):
         print('loading {}'.format(script_name))
@@ -182,7 +182,7 @@ aliases.update({
 
 $PATH.append('~/bin')
 
-$PROMPT = '{env_name:{} }{BOLD_#ccccff}{user} {BOLD_#99cc99}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+$PROMPT = '{BOLD_#ffff99}{env_name:{} }{BOLD_#ccccff}{user} {BOLD_#99cc99}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
 
 # $fzf_ssh_binding = Keys.ControlS
 # $fzf_history_binding = Keys.ControlR
