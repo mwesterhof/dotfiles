@@ -502,7 +502,7 @@ command! Sblame :%!svn blame %
 command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 command! GetDate :r!date "+\%F (\%A)"
-command! Terminal :terminal /usr/local/bin/xonsh
+command! Terminal :terminal /usr/bin/xonsh
 command! Fm :call OpenRangerBuffer()
 
 
