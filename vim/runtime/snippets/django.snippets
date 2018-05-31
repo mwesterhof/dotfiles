@@ -45,3 +45,17 @@ snippet localsettings
 		}
 
 		AUTH_PASSWORD_VALIDATORS = []
+
+snippet command
+	from django.core.management.base import BaseCommand, CommandError
+
+
+	class Command(BaseCommand):
+		help = ''
+
+		def add_arguments(self, parser):
+			parser.add_argument('foo', nargs='+', type=int)
+
+		def handle(self, *args, **options):
+			for foo in options['foo']:
+				pass
