@@ -57,6 +57,26 @@ function! ToggleLatexComment()
     endif
 endfunction
 
+function! ToggleProjectDrawer()
+    if !exists('t:drawer_enabled')
+        let t:drawer_enabled = 1
+        normal mQ
+        e .
+        vs
+        normal C
+        1 wincmd w
+        1000 wincmd <
+        30 wincmd >
+        2 wincmd w
+        normal `Q
+        1 wincmd w
+    else
+        unlet t:drawer_enabled
+        let g:netrw_chgwin = -1
+        1 wincmd c
+    endif
+endfunction
+
 " toggle xml/html tag between starting/ending
 function! ToggleHTMLTag()
     normal "ayi<
@@ -340,7 +360,8 @@ nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <silent> <F6> :Fs<cr><cr>
 
-
+" just in case we might want to use a project drawer
+nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
 
 " clever way to kick off custom commands using trigger file mapped using entr
 nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
