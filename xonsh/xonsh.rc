@@ -73,6 +73,14 @@ def _fuzzy_cd(args):
     cd @$(ls -d */|fzf)
 
 
+def make_bash_alias(base_cmd):
+    def cmd(args):
+        args.insert(0, base_cmd)
+        cmdline = ['bash', '-c', '{}'.format(' '.join(args))]
+        @(cmdline)
+    return cmd
+
+
 def _run_trigger_command(args):
     cmd = ' '.join(args)
     full_cmd = ['bash', '-c', 'echo ~/.trigger |entr {}'.format(cmd)]
@@ -177,8 +185,13 @@ aliases.update({
     'linkbooks': _link_books,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
-    'tak': "bash -c \"git co `git branch|fzf`\""
+    'tak': "bash -c \"git co `git branch|fzf`\"",
+    # use bash for some things
 })
+
+for cmdname in ['watch']:
+    aliases[cmdname] = make_bash_alias(cmdname)
+
 
 $PATH.append('~/bin')
 
