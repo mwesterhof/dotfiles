@@ -33,8 +33,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 " Plug 'neomake/neomake'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
-
-" not working properly (neovim issue?)
-" Plug 'aklt/plantuml-syntax' | Plug 'scrooloose/vim-slumlord'
+Plug 'aklt/plantuml-syntax'
 
 call plug#end()
