@@ -110,6 +110,22 @@ function! GoGoGadgetDeveloper()
     startinsert
 endfunction
 
+function! FixWindowWidth(...)
+    if a:0 == 0
+        if &textwidth == 0
+            let l:textwidth = 119
+        else
+            let l:textwidth = &textwidth
+        endif
+    else
+        let l:textwidth = a:1
+    endif
+    let l:desired_width = l:textwidth + 2
+    normal 10000<
+    execute "normal " . l:desired_width . ">"
+endfunction
+
+
 " 2 wrapper functions to toggle TODO items in my markdown docs
 " A bit hacky and overly specific
 function! ToggleStrikeTodo()
@@ -358,7 +374,7 @@ nnoremap <silent> <leader>gs :Gstatus<CR>
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
-nnoremap <silent> <F6> :Fs<cr><cr>
+nnoremap <c-w>f :call FixWindowWidth()<cr>
 
 " just in case we might want to use a project drawer
 nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
