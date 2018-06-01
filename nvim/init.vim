@@ -241,6 +241,15 @@ function! MapSpaceWindowSwitchers()
         let l:i += 1
     endwhile
 endfunction
+
+function! MapSpaceSpaceTabSwitchers()
+    " is run once on startup
+    let l:i = 1
+    while l:i <= 9
+        execute 'nnoremap <silent> <space><space>' . l:i . ' :' . l:i . 'tabn<cr>'
+        let l:i += 1
+    endwhile
+endfunction
 " }}}
 
 
@@ -387,6 +396,7 @@ autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<
 
 " map <space>1-9 to window positions <3
 call MapSpaceWindowSwitchers()
+call MapSpaceSpaceTabSwitchers()
 " }}}
 
 
