@@ -296,6 +296,7 @@ set expandtab
 set ts=4
 set sw=4
 set softtabstop=4
+set textwidth=119
 
 set autoindent
 set nocindent
