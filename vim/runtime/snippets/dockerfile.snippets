@@ -1,0 +1,17 @@
+snippet base
+	FROM python:3.5-alpine
+	MAINTAINER ${1:name} <${2:email@address.com}>
+
+	WORKDIR /opt/${3:projectname}/
+
+	RUN apk update && \
+		apk add make
+
+	ADD ./something /tmp
+	RUN make stuff
+	RUN pip install django
+
+	EXPOSE 80
+	HEALTHCHECK --interval=30s --timeout=1s --retries=3 CMD curl --fail http://localhost/healthcheck || exit 1
+
+	ENTRYPOINT /opt/$3/bin/entrypoint.sh
