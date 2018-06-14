@@ -153,7 +153,7 @@ def _link_books(args):
 def _do_notify(args):
     if args:
         message = ' '.join(args)
-        cmdline = ['notify-send', '-u', 'critical', '{}'.format(message)]
+        cmdline = ['notify-send', '{}'.format(message)]
         @(cmdline)
 
 
