@@ -21,6 +21,10 @@ Plug 'scrooloose/syntastic'
 " Plug 'honza/vim-snippets' < great examples
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
 
+" nice to haves
+Plug 'dhruvasagar/vim-table-mode'
+Plug 'aklt/plantuml-syntax'
+
 " may drops
 
 " don't care
@@ -30,8 +34,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
 " Plug 'neomake/neomake'
-Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
-Plug 'aklt/plantuml-syntax'
 
 call plug#end()
