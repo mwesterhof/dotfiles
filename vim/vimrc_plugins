@@ -34,6 +34,7 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
 " Plug 'neomake/neomake'
-Plug 'easymotion/vim-easymotion'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 call plug#end()

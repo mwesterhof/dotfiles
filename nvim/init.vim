@@ -137,6 +137,15 @@ function! ToggleStrikeTodo()
     endif
 endfunction
 
+function! ToggleTodo()
+    let l:currentline = getline('.')
+    if l:currentline =~ '[X]'
+        normal ma0^f[lr `a
+    else
+        normal ma0^f[lrX`a
+    endif
+endfunction
+
 function! FancyOpenTerm()
     let l:name=input("name of terminal to create or switch to (term): ")
     if l:name==''
@@ -211,6 +220,15 @@ function! DayMode()
 endfunction
 
 function! FixHighlights()
+    " some limelight-based settings
+    let g:limelight_conceal_ctermfg = 'gray'
+    let g:limelight_conceal_ctermfg = 240
+    " Color name (:help gui-colors) or RGB color
+    let g:limelight_conceal_guifg = 'DarkGray'
+    let g:limelight_conceal_guifg = '#777777'
+    " Number of preceding/following paragraphs to include (default: 0)
+    let g:limelight_paragraph_span = 1
+
     " mute the end-of-file tildes
     highlight EndOfBuffer ctermfg=darkgrey guifg=darkgrey
 
@@ -392,8 +410,9 @@ nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
 " clever way to kick off custom commands using trigger file mapped using entr
 nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
 
-" toggle todo items in markdown (html strikeout)
-autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
+" toggle todo items in markdown
+autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleTodo()<cr>
+" autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 
 " map <space>1-9 to window positions <3
 call MapSpaceWindowSwitchers()
@@ -467,6 +486,10 @@ set scrolloff=3
 
 
 " plugin tweaks {{{
+" limelight/goyo
+autocmd User GoyoEnter Limelight
+autocmd User GoyoLeave Limelight!
+autocmd User GoyoLeave call FixHighlights()
 
 " gitgutter
 set updatetime=1000
