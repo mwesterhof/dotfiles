@@ -139,10 +139,12 @@ endfunction
 
 function! ToggleTodo()
     let l:currentline = getline('.')
-    if l:currentline =~ '[X]'
+    if l:currentline =~ '\[X\]'
         normal ma0^f[lr `a
-    else
+    elseif l:currentline =~ '\[ \]'
         normal ma0^f[lrX`a
+    else
+        normal ma0^wi[ ] 
     endif
 endfunction
 
