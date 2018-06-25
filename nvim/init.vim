@@ -492,6 +492,7 @@ set scrolloff=3
 autocmd User GoyoEnter Limelight
 autocmd User GoyoLeave Limelight!
 autocmd User GoyoLeave call FixHighlights()
+let g:goyo_width=120
 
 " gitgutter
 set updatetime=1000
