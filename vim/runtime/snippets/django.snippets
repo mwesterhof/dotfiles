@@ -1,3 +1,7 @@
+snippet migration
+	def ${1:name}(apps, schema_editor):
+	    ${2:ModelName} = apps.get_model('${3:appname}', '$2')
+
 snippet charfield
 	${1:name} = models.CharField(${2:_("$1")}, max_length=${3:200})
 
