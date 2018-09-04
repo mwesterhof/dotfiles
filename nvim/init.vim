@@ -8,6 +8,18 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
+" test
+let g:MyVimTips="off"
+function! ToggleVimTips()
+  if g:MyVimTips == "on"
+    let g:MyVimTips="off"
+    pclose
+  else
+    let g:MyVimTips="on"
+    pedit ~/vimtips.txt
+  endif
+endfunction
+
 " comments
 function! TogglePythonComment()
     normal 0^"ay$
