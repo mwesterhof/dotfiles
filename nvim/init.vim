@@ -426,8 +426,8 @@ nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
 nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
 
 " toggle todo items in markdown
-autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleTodo()<cr>
-" autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
+" autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleTodo()<cr>
+autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 
 " map <space>1-9 to window positions <3
 call MapSpaceWindowSwitchers()
