@@ -36,5 +36,6 @@ Plug 'vim-scripts/matrix.vim--Yang'
 " Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'khzaw/vim-conceal'
 
 call plug#end()
