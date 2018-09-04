@@ -186,6 +186,7 @@ function! FancyOpenScratch()
         enew
         setlocal buftype=nofile
         execute "file " . l:name
+        set filetype=markdown
     endif
 endfunction
 

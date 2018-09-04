@@ -90,6 +90,7 @@ def _run_trigger_command(args):
 class DirStack:
     favorites = [
         '/home/mephisto/src/dotfiles',
+        '/home/mephisto/Documents/notes',
     ]
     def __init__(self, limit=100):
         self._limit = limit
@@ -173,7 +174,7 @@ def post_activate(name, *args, **kwargs):
 aliases.update({
     'cat': 'ccat --bg=dark',
     'mrs': './manage.py runserver_plus --nopin',
-    'msh': './manage.py shell_plus',
+    'msh': './manage.py shell_plus --print-sql',
     'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --exclude=.tox --languages=Python .',
     'j': _try_jump,
@@ -186,9 +187,9 @@ aliases.update({
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
     'tak': "bash -c \"git co `git branch|fzf`\"",
-    # use bash for some things
 })
 
+# use bash for some things
 for cmdname in ['watch']:
     aliases[cmdname] = make_bash_alias(cmdname)
 
