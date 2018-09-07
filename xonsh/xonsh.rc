@@ -208,3 +208,12 @@ $MULTILINE_PROMPT = '`·.,¸,.·*¯`·.,¸,.·*¯'
 
 # $fzf_ssh_binding = Keys.ControlS
 # $fzf_history_binding = Keys.ControlR
+
+# color support for man pages
+$LESS_TERMCAP_mb = "\033[01;31m"     # begin blinking
+$LESS_TERMCAP_md = "\033[01;31m"     # begin bold
+$LESS_TERMCAP_me = "\033[0m"         # end mode
+$LESS_TERMCAP_so = "\033[01;44;36m"  # begin standout-mode (bottom of screen)
+$LESS_TERMCAP_se = "\033[0m"         # end standout-mode
+$LESS_TERMCAP_us = "\033[00;36m"     # begin underline
+$LESS_TERMCAP_ue = "\033[0m"         # end underline
