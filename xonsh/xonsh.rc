@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+from datetime import datetime
 from os import chdir, getcwd
 
 # source-bash ~/.fzf.bash > /dev/null
@@ -158,6 +159,10 @@ def _do_notify(args):
         @(cmdline)
 
 
+def _print_current_week():
+    print(datetime.today().isocalendar()[1])
+
+
 @events.vox_on_activate
 def post_activate(name, *args, **kwargs):
     from os import path
@@ -181,6 +186,7 @@ aliases.update({
     # 'a': _fuzzy_command,
     't': _run_trigger_command,
     'n': _do_notify,
+    'week': _print_current_week,
     # 'c': _fuzzy_cd,
     'run_refresh_loop': 'bash -c "ag -l --python --html |entr delay_chrome_refresh"',
     'linkbooks': _link_books,
@@ -197,6 +203,7 @@ for cmdname in ['watch']:
 $PATH.append('~/bin')
 
 $PROMPT = '{BOLD_#ffff99}{env_name:{} }{BOLD_#ccccff}{user} {BOLD_#99cc99}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
+$MULTILINE_PROMPT = '`·.,¸,.·*¯`·.,¸,.·*¯'
 
 # $fzf_ssh_binding = Keys.ControlS
 # $fzf_history_binding = Keys.ControlR
