@@ -202,6 +202,7 @@ for cmdname in ['watch']:
 
 $PATH.append('~/bin')
 
+$XONSH_COLOR_STYLE = 'monokai'
 $PROMPT = '{BOLD_#ffff99}{env_name:{} }{BOLD_#ccccff}{user} {BOLD_#99cc99}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '
 $MULTILINE_PROMPT = '`·.,¸,.·*¯`·.,¸,.·*¯'
 
