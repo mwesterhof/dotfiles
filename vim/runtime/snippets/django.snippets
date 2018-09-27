@@ -79,3 +79,11 @@ snippet command
 		def handle(self, *args, **options):
 			for foo in options['foo']:
 				pass
+
+snippet block
+	class ${1:Block}(blocks.StructBlock):
+		title = blocks.CharBlock()
+
+		class Meta:
+			template = '',
+			icon = ''
