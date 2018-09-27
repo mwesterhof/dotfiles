@@ -182,6 +182,7 @@ aliases.update({
     'msh': './manage.py shell_plus --print-sql',
     'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --exclude=.tox --languages=Python .',
+    'nox': 'source-bash venv/bin/activate',
     'j': _try_jump,
     # 'a': _fuzzy_command,
     't': _run_trigger_command,
