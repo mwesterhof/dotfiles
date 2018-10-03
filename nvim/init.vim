@@ -249,7 +249,7 @@ function! FixHighlights()
 
     " make search menus less fugly
     highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
-    highlight Search cterm=NONE ctermfg=black ctermbg=grey
+    highlight Search cterm=NONE ctermfg=red ctermbg=black
 
     " same for c-space
     hi CtrlSpaceNormal guifg=#009900 guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=italic cterm=bold
@@ -502,8 +502,8 @@ set scrolloff=3
 
 " plugin tweaks {{{
 " limelight/goyo
-autocmd User GoyoEnter Limelight
-autocmd User GoyoLeave Limelight!
+"autocmd User GoyoEnter Limelight
+"autocmd User GoyoLeave Limelight!
 autocmd User GoyoLeave call FixHighlights()
 let g:goyo_width=120
 
