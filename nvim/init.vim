@@ -245,7 +245,7 @@ function! FixHighlights()
     let g:limelight_paragraph_span = 1
 
     " mute the end-of-file tildes
-    highlight EndOfBuffer ctermfg=darkgrey guifg=darkgrey
+    highlight EndOfBuffer ctermfg=black guifg=black
 
     " make search menus less fugly
     highlight Pmenu ctermfg=7* ctermbg=0* guibg=LightMagenta
