@@ -3,13 +3,13 @@
 from datetime import datetime
 from os import chdir, getcwd
 
-# source-bash ~/.fzf.bash > /dev/null
+source-bash ~/.fzf.bash > /dev/null
 
 $VI_MODE = True
 $PGUSER = 'postgres'
 
 xontrib load vox
-# xontrib load fzf-widgets
+xontrib load fzf-widgets
 
 fuzzies = {
     'git': [
@@ -72,6 +72,7 @@ def _fuzzy_command(args):
 
 def _fuzzy_cd(args):
     cd @$(ls -d */|fzf)
+    ls
 
 
 def make_bash_alias(base_cmd):
@@ -184,11 +185,11 @@ aliases.update({
     'runtags': 'ctags -R --exclude=.tox --languages=Python .',
     'nox': 'source-bash venv/bin/activate',
     'j': _try_jump,
-    # 'a': _fuzzy_command,
+    'a': _fuzzy_command,
     't': _run_trigger_command,
     'n': _do_notify,
     'week': _print_current_week,
-    # 'c': _fuzzy_cd,
+    'c': _fuzzy_cd,
     'run_refresh_loop': 'bash -c "ag -l --python --html |entr delay_chrome_refresh"',
     'linkbooks': _link_books,
     'pbcopy': "xclip -i -selection clipboard",
