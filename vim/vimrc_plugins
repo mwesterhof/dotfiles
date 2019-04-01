@@ -23,7 +23,6 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 
 " nice to haves
 Plug 'dhruvasagar/vim-table-mode'
-Plug 'aklt/plantuml-syntax'
 
 " may drops
 
@@ -38,5 +37,9 @@ Plug 'rstacruz/sparkup'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'khzaw/vim-conceal'
+
+" highlighting
+Plug 'aklt/plantuml-syntax'
+Plug 'mxw/vim-jsx'
 
 call plug#end()

@@ -374,6 +374,7 @@ set switchbuf=useopen,usetab
 if has('nvim')
     nnoremap <c-t> :call FancyOpenTerm()<cr>
     tnoremap <c-h> <C-\><C-n>
+    set inccommand=nosplit
 endif
 " }}}
 
@@ -412,7 +413,7 @@ nnoremap <silent> <leader>f :vertical sfind
 " open file under cursor in new vertical window
 nnoremap <silent> <leader>F :Fm<cr>
 nnoremap <silent> T :TagbarToggle<CR>
-nnoremap <silent> <leader>gs :Gstatus<CR>
+nnoremap <silent> <leader>g :FloatIt<CR>
 
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
@@ -523,7 +524,7 @@ nnoremap <c-space> :CtrlSpace<cr>
 nnoremap <F5> :MundoToggle<cr>
 
 " Golden ratio
-nnoremap <leader>g :GoldenRatioToggle<cr>
+" nnoremap <leader>g :GoldenRatioToggle<cr>
 
 " make snippets from dotfiles dir available to snipmate
 set runtimepath+=$HOME/src/dotfiles/vim/runtime
