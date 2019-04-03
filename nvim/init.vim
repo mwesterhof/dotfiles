@@ -1,5 +1,4 @@
 " New and improved vundle-enabled vimrc
-" check out https://github.com/mvantellingen/dotfiles/blob/master/_vimrc (line 80)
 " vimscript tutorial http://learnvimscriptthehardway.stevelosh.com/chapters/18.html
 
 cd ~/dev

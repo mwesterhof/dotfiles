@@ -35,7 +35,6 @@ alias no="ls"
 alias p=r
 alias mrs="./manage.py runserver"
 alias doco="docker-compose"
-alias yolo="git pull --rebase && git push"
 alias killem="ps aux |grep runserver |grep -v grep |awk '{print \$2}' |xargs kill"
 alias vi="nvim"
 alias runtags="ctags -R --languages=Python ."
