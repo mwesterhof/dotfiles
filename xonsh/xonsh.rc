@@ -70,11 +70,6 @@ def _fuzzy_command(args):
     @(command.split())
 
 
-def _fuzzy_cd(args):
-    cd @$(ls -d */|fzf)
-    ls
-
-
 def make_bash_alias(base_cmd):
     def cmd(args):
         args.insert(0, base_cmd)
@@ -178,10 +173,10 @@ def post_activate(name, *args, **kwargs):
 
 
 aliases.update({
+    'eu': 'ls',
     'cat': 'ccat --bg=dark',
     'mrs': './manage.py runserver_plus --nopin',
     'msh': './manage.py shell_plus --print-sql',
-    'watchhtml': 'ag --html -l|entr touch manage.py &',
     'runtags': 'ctags -R --exclude=.tox --languages=Python .',
     'nox': 'source-bash venv/bin/activate',
     'j': _try_jump,
@@ -189,9 +184,6 @@ aliases.update({
     't': _run_trigger_command,
     'n': _do_notify,
     'week': _print_current_week,
-    'c': _fuzzy_cd,
-    'run_refresh_loop': 'bash -c "ag -l --python --html |entr delay_chrome_refresh"',
-    'linkbooks': _link_books,
     'pbcopy': "xclip -i -selection clipboard",
     'pbpaste': "xclip -i -selection clipboard -o",
     'tak': "bash -c \"git co `git branch|fzf`\"",
