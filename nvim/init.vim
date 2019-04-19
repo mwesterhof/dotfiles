@@ -190,19 +190,21 @@ function! FancyOpenScratch()
 endfunction
 
 function! CycleNumberSetting()
-    if !exists('b:number_toggle_value')
-        let b:number_toggle_value = 1
-        setlocal number
-        setlocal norelativenumber
-    elseif b:number_toggle_value == 1
-        let b:number_toggle_value = 2
-        setlocal number
-        setlocal relativenumber
-    elseif b:number_toggle_value == 2
-        unlet b:number_toggle_value
-        setlocal norelativenumber
-        setlocal nonumber
-    endif
+    set number!
+
+    " if !exists('b:number_toggle_value')
+    "     let b:number_toggle_value = 1
+    "     setlocal number
+    "     setlocal norelativenumber
+    " elseif b:number_toggle_value == 1
+    "     let b:number_toggle_value = 2
+    "     setlocal number
+    "     setlocal relativenumber
+    " elseif b:number_toggle_value == 2
+    "     unlet b:number_toggle_value
+    "     setlocal norelativenumber
+    "     setlocal nonumber
+    " endif
 endfunction
 
 function! ToggleHardMode()
