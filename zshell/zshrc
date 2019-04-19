@@ -55,6 +55,7 @@ export NVM_DIR="/home/mephisto/dev/asics-gtm/asics/static/frontend/.nvm"
 cowsay -e "^^" `fortune`
 
 export PYTHONDONTWRITEBYTECODE=1
+export NVIM_LISTEN_ADDRESS='/tmp/nvim_socket'
 
 # pyenv stuff
 #export PYENV_ROOT="$HOME/.pyenv"
