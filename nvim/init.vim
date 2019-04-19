@@ -419,6 +419,7 @@ nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <c-w>f :call FixWindowWidth()<cr>
+nnoremap <leader>l :LineHint<space>
 
 " just in case we might want to use a project drawer
 nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
