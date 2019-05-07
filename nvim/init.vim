@@ -415,7 +415,7 @@ nnoremap <silent> <leader>f :vertical sfind
 " open file under cursor in new vertical window
 nnoremap <silent> <leader>F :Fm<cr>
 nnoremap <silent> T :TagbarToggle<CR>
-nnoremap <silent> <leader>g :FloatIt<CR>
+" nnoremap <silent> <leader>g :FloatIt<CR>
 
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
