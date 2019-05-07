@@ -23,6 +23,7 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 
 " nice to haves
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'rhysd/git-messenger.vim'
 
 " may drops
 
