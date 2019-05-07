@@ -544,6 +544,9 @@ let g:table_mode_corner="|"
 " let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
 let g:syntastic_python_python_exec = '/usr/bin/python3'
 
+" git-messenger
+map <leader>b <Plug>(git-messenger)
+
 " }}}
 
 
