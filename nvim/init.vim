@@ -323,7 +323,6 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus
 set mouse=a
 set encoding=utf-8
-set ttyfast  " removed in neovim
 set ruler
 
 set expandtab
@@ -348,6 +347,7 @@ set diffopt=filler,vertical
 " pretties {{{
 colorscheme distinguished
 call FixHighlights()
+
 
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
@@ -377,6 +377,11 @@ if has('nvim')
     nnoremap <c-t> :call FancyOpenTerm()<cr>
     tnoremap <c-h> <C-\><C-n>
     set inccommand=nosplit
+
+    " temporary workaround to fix weird characters in MATE+neovim
+    set guicursor=
+else
+    set ttyfast  " removed in neovim
 endif
 " }}}
 
@@ -567,28 +572,13 @@ augroup END
 if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
     if s:uname == "Darwin"
-        " MAC only
         let OS="osx"
-
-        " Technically, we should put this stuff in gvimrc, but this allows us
-        " to keep it all in the same file.
-        if has('gui_running')
-            " GUI stuff
-            set gfn=Monaco:h14
-            set transparency=3
-        endif
-
-        nnoremap <D-j> ddp
-        nnoremap <D-k> ddkP
     else
         let OS="linux"
     endif
 else
     let OS="windows"
 endif
-
-" temporary workaround to fix weird characters in MATE+neovim
-set guicursor=
 
 " custom commands
 command! Sblame :%!svn blame %
