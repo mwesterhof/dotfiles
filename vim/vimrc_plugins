@@ -24,6 +24,7 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 " nice to haves
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'rhysd/git-messenger.vim'
+Plug 'khzaw/vim-conceal'
 
 " may drops
 
@@ -37,7 +38,8 @@ Plug 'rstacruz/sparkup'
 " Plug 'neomake/neomake'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'khzaw/vim-conceal'
+
+" trying out colorschemes
 
 " highlighting
 Plug 'aklt/plantuml-syntax'

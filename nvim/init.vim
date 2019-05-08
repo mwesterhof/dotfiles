@@ -522,7 +522,7 @@ let g:netrw_winsize = ""
 
 " vim-airline
 set laststatus=2
-let g:airline_theme='raven'
+let g:airline_theme='badwolf'
 
 
 " fix ctrl-space's hotkey (derp)
