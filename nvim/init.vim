@@ -505,7 +505,7 @@ augroup END
 " scrolling {{{
 nnoremap <Up> 4<C-y>
 nnoremap <Down> 4<C-e>
-set scrolloff=3
+" set scrolloff=3
 " }}}
 
 
