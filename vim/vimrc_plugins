@@ -1,8 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 " colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'ryanpcmcquen/true-monochrome_vim'
 Plug 'lokaltog/vim-distinguished'
 
 " needs
@@ -25,22 +23,20 @@ Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'rhysd/git-messenger.vim'
 Plug 'khzaw/vim-conceal'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+Plug 'rstacruz/sparkup'
 
 " may drops
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
-" Plug 'roman/golden-ratio'
 Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
-Plug 'rstacruz/sparkup'
-" Plug 'neomake/neomake'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'easymotion/vim-easymotion'
 
 " trying out colorschemes
-
 " highlighting
 Plug 'aklt/plantuml-syntax'
 Plug 'mxw/vim-jsx'
