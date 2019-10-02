@@ -410,6 +410,7 @@ nnoremap <silent> <leader><space> :bn<cr>
 nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
 nnoremap <silent> <leader>N :vs ~/Documents/notes/docs<cr>
+nnoremap <silent> <leader>T :vs ~/todo.md<cr>
 nnoremap <silent> <leader>m :make<cr>
 
 nnoremap <leader><leader> @q
