@@ -531,6 +531,10 @@ nnoremap <c-space> :CtrlSpace<cr>
 " Mundo
 nnoremap <F5> :MundoToggle<cr>
 
+" easy motion
+nmap F <Plug>(easymotion-prefix)
+
+
 " Golden ratio
 " nnoremap <leader>g :GoldenRatioToggle<cr>
 
