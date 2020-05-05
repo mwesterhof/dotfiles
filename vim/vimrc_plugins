@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugged')
 
 " colorschemes
 Plug 'lokaltog/vim-distinguished'
+Plug 'morhetz/gruvbox'
 
 " needs
 Plug 'tpope/vim-vinegar'

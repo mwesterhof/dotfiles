@@ -345,7 +345,7 @@ set diffopt=filler,vertical
 
 
 " pretties {{{
-colorscheme distinguished
+colorscheme gruvbox
 call FixHighlights()
 
 
