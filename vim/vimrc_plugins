@@ -27,6 +27,7 @@ Plug 'khzaw/vim-conceal'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'rstacruz/sparkup'
+Plug 'luisjure/csound-vim'
 
 " may drops
 
