@@ -194,7 +194,12 @@ for cmdname in ['watch']:
     aliases[cmdname] = make_bash_alias(cmdname)
 
 
-$PATH.extend(['~/bin', '~/appimages/'])
+$PATH.extend([
+    '~/bin/',
+    '~/appimages/',
+    '~/go/bin/',
+    '/usr/local/go/bin',
+])
 
 $XONSH_COLOR_STYLE = 'monokai'
 $PROMPT = '{BOLD_#ffff99}{env_name:{} }{BOLD_#ccccff}{user} {BOLD_#99cc99}{cwd}{branch_color}{curr_branch: {}}{NO_COLOR} {BOLD_BLUE}{prompt_end}{NO_COLOR} '

@@ -457,6 +457,14 @@ augroup END
 " }}}
 
 
+" golang coding shortcuts {{{
+augroup python
+autocmd!
+autocmd FileType go :nnoremap <buffer> <leader>r :!/usr/local/go/bin/go run %<CR>
+augroup END
+" }}}
+
+
 " html shortcuts {{{
 augroup html
 autocmd!
