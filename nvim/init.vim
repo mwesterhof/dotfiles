@@ -265,6 +265,9 @@ function! FixHighlights()
 
     " other (text, background)
     hi TabLine ctermfg=Black ctermbg=LightGrey
+
+    " disable opaque background
+    highlight Normal ctermbg=none
 endfunction
 
 function! MapSpaceWindowSwitchers()
@@ -346,7 +349,7 @@ set diffopt=filler,vertical
 
 " pretties {{{
 " colorscheme gruvbox
-colorscheme distinguished
+colorscheme apprentice
 call FixHighlights()
 
 

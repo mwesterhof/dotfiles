@@ -37,7 +37,10 @@ Plug 'vim-scripts/matrix.vim--Yang'
 
 " try
 Plug 'easymotion/vim-easymotion'
-Plug 'wellle/context.vim'
+Plug 'mhinz/vim-signify'
+Plug 'romainl/Apprentice'
+
+" Plug 'wellle/context.vim'
 
 " trying out colorschemes
 " highlighting
