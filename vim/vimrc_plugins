@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 " colorschemes
 Plug 'lokaltog/vim-distinguished'
 Plug 'morhetz/gruvbox'
+Plug 'franbach/miramare'
 
 " needs
 Plug 'tpope/vim-vinegar'
@@ -30,6 +31,7 @@ Plug 'rstacruz/sparkup'
 Plug 'luisjure/csound-vim'
 
 " may drops
+Plug 'chrisbra/Colorizer'
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
@@ -39,6 +41,7 @@ Plug 'vim-scripts/matrix.vim--Yang'
 Plug 'easymotion/vim-easymotion'
 Plug 'mhinz/vim-signify'
 Plug 'romainl/Apprentice'
+Plug 'TaDaa/vimade'
 
 " Plug 'wellle/context.vim'
 

@@ -1,9 +1,9 @@
 " New and improved vundle-enabled vimrc
 " vimscript tutorial http://learnvimscriptthehardway.stevelosh.com/chapters/18.html
 
+
 cd ~/dev
 source ~/.vimrc_plugins
-
 
 " functions {{{
 
@@ -225,16 +225,6 @@ function! ToggleHardMode()
     endif
 endfunction
 
-function! NightMode()
-    colorscheme koehler
-    call FixHighlights()
-endfunction
-
-function! DayMode()
-    colorscheme evening
-    call FixHighlights()
-endfunction
-
 function! FixHighlights()
     " some limelight-based settings
     let g:limelight_conceal_ctermfg = 'gray'
@@ -409,7 +399,7 @@ nnoremap <leader>s :w<CR>
 nnoremap <silent> <c-s> :call FancyOpenScratch()<cr>
 nnoremap <silent> <leader>e :e .<CR>
 nnoremap <silent> <leader>E :e $MYVIMRC<CR>
-nnoremap <silent> <leader><space> :bn<cr>
+" nnoremap <silent> <leader><space> :bn<cr>
 
 nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
@@ -539,7 +529,8 @@ let g:airline_theme='badwolf'
 
 
 " fix ctrl-space's hotkey (derp)
-nnoremap <c-space> :CtrlSpace<cr>
+" nnoremap <c-space> :CtrlSpace<cr>
+nnoremap <leader><space> :CtrlSpace<cr>
 
 " Mundo
 nnoremap <F5> :MundoToggle<cr>
@@ -555,6 +546,7 @@ nmap F <Plug>(easymotion-prefix)
 set runtimepath+=$HOME/src/dotfiles/vim/runtime
 " set some aliases
 let g:snipMate = {}
+let g:snipMate.snippet_version = 0
 let g:snipMate.scope_aliases = {}
 let g:snipMate.scope_aliases['htmldjango'] = 'html,htmldjango'
 let g:snipMate.scope_aliases['python'] = 'python,django'
@@ -602,7 +594,7 @@ command! Sblame :%!svn blame %
 command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 command! GetDate :r!date "+\%F (\%A)"
-command! Terminal :terminal /usr/bin/xonsh
+command! Terminal :terminal
 command! Fm :call OpenRangerBuffer()
 
 
