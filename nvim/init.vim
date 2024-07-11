@@ -552,12 +552,14 @@ if has("unix")
     let s:uname = substitute(system("uname"), '\n', '', '')
     if s:uname == "Darwin"
         let OS="osx"
+        let g:python3_host_prog = '/Users/m.westerhof/.pyenv/shims/python3'
     else
         let OS="linux"
     endif
 else
     let OS="windows"
 endif
+
 
 " custom commands
 command! Sblame :%!svn blame %
