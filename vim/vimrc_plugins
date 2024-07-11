@@ -4,6 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'lokaltog/vim-distinguished'
 Plug 'morhetz/gruvbox'
 Plug 'franbach/miramare'
+Plug 'romainl/Apprentice'
 
 " needs
 Plug 'tpope/vim-vinegar'
@@ -12,12 +13,12 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat' | Plug 'tpope/vim-surround'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'majutsushi/tagbar'
 Plug 'simnalamburt/vim-mundo'
 Plug 'sk1418/QFGrep'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 " Plug 'honza/vim-snippets' < great examples
 Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/tlib_vim' | Plug 'garbas/vim-snipmate'
 
@@ -29,25 +30,19 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'rstacruz/sparkup'
 Plug 'luisjure/csound-vim'
-
-" may drops
-Plug 'chrisbra/Colorizer'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'mhinz/vim-signify'
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'
 Plug 'vim-scripts/matrix.vim--Yang'
+Plug 'AndrewRadev/gnugo.vim'
 
 " try
-Plug 'easymotion/vim-easymotion'
-Plug 'mhinz/vim-signify'
-Plug 'romainl/Apprentice'
-Plug 'TaDaa/vimade'
 
+" skipping for now, too much hassle
 " Plug 'wellle/context.vim'
+" Plug 'TaDaa/vimade'
 
-" trying out colorschemes
-" highlighting
-Plug 'aklt/plantuml-syntax'
-Plug 'mxw/vim-jsx'
 
 call plug#end()

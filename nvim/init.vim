@@ -7,18 +7,6 @@ source ~/.vimrc_plugins
 
 " functions {{{
 
-" test
-let g:MyVimTips="off"
-function! ToggleVimTips()
-  if g:MyVimTips == "on"
-    let g:MyVimTips="off"
-    pclose
-  else
-    let g:MyVimTips="on"
-    pedit ~/vimtips.txt
-  endif
-endfunction
-
 " comments
 function! TogglePythonComment()
     normal 0^"ay$
@@ -86,22 +74,6 @@ function! ToggleProjectDrawer()
         let g:netrw_chgwin = -1
         1 wincmd c
     endif
-endfunction
-
-" toggle xml/html tag between starting/ending
-function! ToggleHTMLTag()
-    normal "ayi<
-    if @a[0] ==# '/'
-        normal wF<lx
-    else
-        normal wF<li/
-    endif
-endfunction
-
-" self explanatory
-function OpenRangerBuffer()
-    terminal EDITOR=nvim ranger
-    startinsert
 endfunction
 
 " Quick dev environment reset
@@ -294,7 +266,7 @@ set smartcase
 set nowrapscan
 
 vnoremap / y:Ack <c-r>+ --python
-nnoremap /<leader> yiw:Ack <c-r>+ --python
+nnoremap ? yiw:Ack <c-r>+ --python
 nnoremap // :Ack<space>
 nnoremap <ESC><ESC> :ccl<cr>
 
@@ -418,7 +390,7 @@ nnoremap <silent> T :TagbarToggle<CR>
 nnoremap <silent> <leader>G :FloatIt<CR>
 
 nnoremap ; :
-nnoremap <silent> <BS> :nohlsearch<CR>:SyntasticReset<CR>
+nnoremap <silent> <BS> :nohlsearch<CR>
 nnoremap <Tab> <C-w><C-w>
 nnoremap <c-w>f :call FixWindowWidth()<cr>
 nnoremap <leader>l :LineHint<space>
@@ -430,8 +402,8 @@ nnoremap <silent> Q :call ToggleProjectDrawer()<cr>
 nnoremap <silent> <leader><CR> :call jobstart('touch ~/.trigger')<CR>
 
 " toggle todo items in markdown
-" autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleTodo()<cr>
-autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
+autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleTodo()<cr>
+" autocmd FileType markdown :nnoremap <buffer> <leader>t :call ToggleStrikeTodo()<cr>
 
 " map <space>1-9 to window positions <3
 call MapSpaceWindowSwitchers()
@@ -461,7 +433,6 @@ augroup END
 " html shortcuts {{{
 augroup html
 autocmd!
-autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType html :nnoremap <buffer> <leader>{ :set filetype=htmldjango<CR>
 autocmd FileType html :nnoremap <buffer> <leader>/ :call ToggleHTMLComment()<CR>
 augroup END
@@ -471,7 +442,6 @@ augroup END
 " htmldjango shortcuts {{{
 augroup htmldjango
 autocmd!
-autocmd FileType html :nnoremap <buffer> <leader>t :call ToggleHTMLTag()<CR>
 autocmd FileType htmldjango :nnoremap <buffer> <leader>{ :set filetype=html<CR>
 autocmd FileType htmldjango :nnoremap <buffer> <leader>/ :call ToggleHTMLDjangoComment()<CR>
 augroup END
@@ -494,7 +464,6 @@ autocmd FileType tex :nnoremap <buffer> <leader>/ :call ToggleLatexComment()<CR>
 let g:tex_flavor = "latex"
 augroup END
 " }}}
-
 
 " markdown shortcuts {{{
 augroup markdownshortcuts
@@ -527,6 +496,7 @@ let g:netrw_winsize = ""
 set laststatus=2
 let g:airline_theme='badwolf'
 
+let g:textbeat_path = '~/src/textbeat/txbt'
 
 " fix ctrl-space's hotkey (derp)
 " nnoremap <c-space> :CtrlSpace<cr>
@@ -556,7 +526,7 @@ let g:table_mode_corner="|"
 
 " syntastic
 " let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
-let g:syntastic_python_python_exec = '/usr/bin/python3'
+" let g:syntastic_python_python_exec = '/usr/bin/python3'
 
 " git-messenger
 map <leader>b <Plug>(git-messenger)
@@ -595,7 +565,6 @@ command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 command! GetDate :r!date "+\%F (\%A)"
 command! Terminal :terminal
-command! Fm :call OpenRangerBuffer()
 
 
 " project specific rc files sound pretty bloody awesome
