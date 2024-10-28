@@ -8,6 +8,7 @@ Plug 'romainl/Apprentice'
 
 " needs
 Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-capslock'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
@@ -32,6 +33,7 @@ Plug 'rstacruz/sparkup'
 Plug 'luisjure/csound-vim'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
+Plug 'nelsyeung/twig.vim'
 
 " don't care
 Plug 'vim-scripts/TeTrIs.vim'

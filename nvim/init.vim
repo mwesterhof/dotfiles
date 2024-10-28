@@ -377,7 +377,7 @@ nnoremap <silent> <leader>n :call CycleNumberSetting()<cr>
 
 nnoremap <silent> <leader>N :vs ~/Documents/notes/docs<cr>
 nnoremap <silent> <leader>T :vs ~/todo.md<cr>
-nnoremap <silent> <leader>m :make<cr>
+nnoremap <silent> <leader>m :make 
 
 nnoremap <leader><leader> @q
 inoremap <leader><leader> <esc>
@@ -562,12 +562,12 @@ endif
 
 
 " custom commands
-command! Sblame :%!svn blame %
 command! Go :call GoGoGadgetDeveloper()
 command! Snippets :vsplit ~/src/dotfiles/vim/runtime/snippets/
 command! GetDate :r!date "+\%F (\%A)"
 command! Terminal :terminal
 
+command! Today :!psql -c "select * from view_today;" timelog
 
 " project specific rc files sound pretty bloody awesome
 set exrc
