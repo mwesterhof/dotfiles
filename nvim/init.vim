@@ -259,6 +259,10 @@ set wildmode=full
 set wildignore+=*.o,*.obj,.git,*.pyc,*.pyo,*.gif,*.png,*.jpg,*.doctree
 set path+=**
 
+" sensible visual-mode search
+vnoremap * y/\V<C-R>=substitute(escape(@@,"/\\"),"\n","\\\\n","ge")<CR><CR>
+vnoremap # y?\V<C-R>=substitute(escape(@@,"?\\"),"\n","\\\\n","ge")<CR><CR>
+
 set incsearch
 set hlsearch
 set ignorecase
@@ -295,7 +299,7 @@ set ts=4
 set sw=4
 set softtabstop=4
 set textwidth=119
-set formatoptions-=t
+set formatoptions-=t  " turn off auto wrap
 
 set autoindent
 set nocindent
@@ -318,9 +322,6 @@ call FixHighlights()
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 "disable all gui options but scroll bars
-set go-=T 
-set go+=lLrRbB
-set go-=lLrRbB
 " }}}
 
 
@@ -366,6 +367,7 @@ let mapleader=","
 nnoremap <leader>o :!python -m webbrowser -t http://localhost:8000/
 nnoremap <leader>O :e http://localhost:8000/
 
+nnoremap <silent> <leader>g :Goyo<cr>
 nnoremap <silent> <leader>c :q<cr>
 nnoremap <leader>s :w<CR>
 nnoremap <silent> <c-s> :call FancyOpenScratch()<cr>
@@ -387,7 +389,6 @@ nnoremap <silent> <leader>f :vertical sfind
 " open file under cursor in new vertical window
 nnoremap <silent> <leader>F :Fm<cr>
 nnoremap <silent> T :TagbarToggle<CR>
-nnoremap <silent> <leader>G :FloatIt<CR>
 
 nnoremap ; :
 nnoremap <silent> <BS> :nohlsearch<CR>
@@ -461,6 +462,7 @@ augroup texshortcuts
 autocmd!
 autocmd FileType c :nnoremap <buffer> <leader>/ :call ToggleCStyleComment()<CR>
 autocmd FileType tex :nnoremap <buffer> <leader>/ :call ToggleLatexComment()<CR>
+" autocmd FileType tex :set formatoptions+=t<CR>
 let g:tex_flavor = "latex"
 augroup END
 " }}}
@@ -470,6 +472,23 @@ augroup markdownshortcuts
 autocmd!
 autocmd FileType markdown :nnoremap <buffer> <leader>1 yypv$r=
 autocmd FileType markdown :nnoremap <buffer> <leader>2 yypv$r-
+autocmd FileType markdown :set formatoptions+=t
+augroup END
+" }}}
+
+" vue SFC shortcuts {{{
+augroup vueshortcuts
+autocmd!
+autocmd FileType vue :set <buffer> ts=2
+autocmd FileType vue :set <buffer> sw=2
+augroup END
+" }}}
+
+" javascript shortcuts {{{
+augroup javascriptshortcuts
+autocmd!
+autocmd FileType javascript :set <buffer> ts=2
+autocmd FileType javascript :set <buffer> sw=2
 augroup END
 " }}}
 
@@ -506,7 +525,7 @@ nnoremap <leader><space> :CtrlSpace<cr>
 nnoremap <F5> :MundoToggle<cr>
 
 " easy motion
-nmap F <Plug>(easymotion-prefix)
+" nmap F <Plug>(easymotion-prefix)
 
 
 " Golden ratio
